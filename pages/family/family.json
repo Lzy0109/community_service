@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "family-pannel": "/components/pannel/pannel",
-    "pannel-box-body": "/components/pannel-box-body/pannel-box-body"
-  }
-}

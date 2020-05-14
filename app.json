@@ -24,7 +24,6 @@
     "pages/payment/isPaid/isPaid",
     "pages/activity/showOngoing/showOngoing",
     "pages/activity/showClosed/showClosed",
-    "pages/family/family",
     "pages/bindwx/bindwx",
     "pages/modifyPwd/testOld/testOld",
     "pages/modifyPwd/update/update",
