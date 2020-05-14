@@ -1,0 +1,24 @@
+<pannel name="已结束的活动" desc="My Closed Activity">
+  <block wx:if="{{closedActivities == ''}}">
+    <!-- 无报名活动信息 -->
+    <view class="warn">暂无相关活动信息</view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{closedActivities}}" 
+            wx:key="index">
+      <activity-detail title="{{item.name}}" 
+                        bind:detailClick="toActivity" 
+                        data-value="{{item.id}}">
+        <view class="nums">
+          <image class="icon" src="/assets/p-i-icon/nums.svg"></image>
+          <h4>报名人数：{{item.nums}} 人</h4>
+        </view>
+        <view class="date">
+          <image class="icon" src="/assets/p-i-icon/date.svg"></image>
+          <h4>活动日期：{{item.date}}</h4>
+        </view>
+      </activity-detail>
+    </block>
+  </block>
+  <pannel-box-footer text="参加社区活动 有益身体健康"/>
+</pannel>

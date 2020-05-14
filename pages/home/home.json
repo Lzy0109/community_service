@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "home-swiper": "./child-components/home-swiper/home-swiper",
+    "home-grid": "./child-components/home-grid/home-grid",
+    "home-grid-item": "./child-components/home-grid-item/home-grid-item"
+  },
+  "navigationBarTitleText": "智能社区"
+}

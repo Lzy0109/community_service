@@ -1,0 +1,24 @@
+<pannel name="正在进行的活动" desc="My Ongoing Activity">
+  <block wx:if="{{OngoingActivities == ''}}">
+    <!-- 无报名活动信息 -->
+    <view class="warn">您没有正在进行的活动</view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{ongoingActivities}}" 
+            wx:key="index">
+      <activity-detail title="{{item.name}}" 
+                        bind:detailClick="toActivity" 
+                        data-value="{{item.id}}">
+        <view class="nums">
+          <image class="icon" src="/assets/p-i-icon/nums.svg"></image>
+          <h4>报名人数：{{item.nums}} 人</h4>
+        </view>
+        <view class="date">
+          <image class="icon" src="/assets/p-i-icon/date.svg"></image>
+          <h4>活动日期：{{item.date}}</h4>
+        </view>
+      </activity-detail>
+    </block>
+  </block>
+  <pannel-box-footer text="参加社区活动 有益身体健康"/>
+</pannel>

@@ -1,0 +1,10 @@
+/* pages/profile/child-components/profile-list-footer/profile-list-footer.wxss */
+.profile-list-footer {
+  margin-top: 40rpx;
+  padding: 30rpx;
+}
+
+.profile-list-footer button {
+  color: white;
+  background-color:#e64340;
+}

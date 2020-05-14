@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "pay-pannel": "/components/pannel/pannel",
+    "pay-box": "/components/pannel-box-body/pannel-box-body",
+    "pay-box-detail": "/components/pannel-box-detail/pannel-box-detail",
+    "mp-halfScreenDialog": "/miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog",
+    "pay-footer": "/components/pannel-box-footer/pannel-box-footer"
+  }
+}

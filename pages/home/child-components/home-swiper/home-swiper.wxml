@@ -1,0 +1,30 @@
+<!--pages/home/child-components/home-swiper.wxml-->
+<view>
+    <swiper class="swiper"
+            circular
+            autoplay
+            interval='3000'
+            duration='300'
+            indicator-dots
+            indicator-active-color='#6699CC'
+            >
+      <swiper-item>
+        <image src="/assets/swiper/1.jpg" 
+              mode="widthFix" 
+              style="width: 100%">
+        </image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/swiper/2.jpg" 
+              mode="widthFix" 
+              style="width: 100%">
+        </image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/assets/swiper/3.jpg" 
+              mode="widthFix" 
+              style="width: 100%">
+        </image>
+      </swiper-item>
+    </swiper>
+  </view>

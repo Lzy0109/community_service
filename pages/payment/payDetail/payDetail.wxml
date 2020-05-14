@@ -1,0 +1,28 @@
+<view class="pay-header">
+  <h2 class="pay-title">{{pay_title}}</h2>
+  <view class="pay-tips">智能社区</view>
+  <view class="pay-price">￥{{pay_standard}}</view>
+</view>
+<view class="pay-desc">
+  <view class="desc-item">
+    <text>支付人</text>
+    <view class="item-detail">{{pay_household}}</view>
+  </view>
+  <view class="desc-item">
+    <text>缴费项目描述</text>
+    <view class="item-detail">{{pay_desc}}</view>
+  </view>
+  <view class="desc-item">
+    <text>缴费时间</text>
+    <view class="item-detail">{{pay_datetime}}</view>
+  </view>
+  <view class="desc-item">
+    <text>缴费状态</text>
+    <block wx:if="{{pay_status}}">
+      <view class="item-detail">已缴清</view>
+    </block>
+    <block wx:else>
+      <view class="item-detail">未缴清</view>
+    </block>
+  </view>
+</view>

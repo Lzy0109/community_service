@@ -1,0 +1,12 @@
+<!--pages/profile/child-components/profile-list-item/profile-list-item.wxml-->
+<view class="profile-list-item" bind:tap="itemClick">
+  <view class="list-item-icon">
+    <image src="{{iconPath}}"/>
+  </view>
+  <view class="list-item-text">
+    <text>{{name}}</text>
+  </view>
+  <view class="list-item-r-icon">
+    <image src="/assets/profile/r_arrow.svg"></image>
+  </view>
+</view>

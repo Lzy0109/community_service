@@ -1,0 +1,17 @@
+/* pages/activity/showClosed/showClosed.wxss */
+.warn {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px; 
+}
+.nums{
+  padding: 16px 16px 12px;
+}
+.date {
+  padding: 10px 16px 12px;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}

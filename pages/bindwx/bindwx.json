@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bindwx-pannel": "/components/pannel/pannel",
+    "bindwx-pannel-footer": "/components/pannel-box-footer/pannel-box-footer"
+  }
+}

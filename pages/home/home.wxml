@@ -1,0 +1,21 @@
+<view>
+  <home-swiper/>
+  <home-grid>
+    <navigator url="/pages/news/showNews/showNews">
+      <home-grid-item imgPath="/assets/grid/news.svg" 
+                      name="社区新闻"/>
+    </navigator>
+    <navigator url="/pages/activity/showActivity/showActivity">
+      <home-grid-item imgPath="/assets/grid/activity.svg" 
+                      name="社区活动"/>
+    </navigator>
+    <navigator url="/pages/repair/addRepair/addRepair">
+      <home-grid-item imgPath="/assets/grid/repair.svg" 
+                    name="我要报修"/>
+    </navigator>
+    <navigator url="/pages/feedback/addFeedback/addFeedback">
+      <home-grid-item imgPath="/assets/grid/feedback.svg" 
+                      name="我要反馈"/>
+    </navigator>
+  </home-grid>
+</view>

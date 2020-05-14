@@ -1,0 +1,41 @@
+/* pages/activity/addRegister/addRegister.wxss */
+.form-header {
+  padding: 48px 32px;
+  text-align: center;
+}
+.form-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.36;
+}
+.form-tips {
+  color: #888888;
+  font-size: 15px;
+  margin-top: 16px;
+}
+.form-body {
+  padding: 40rpx;
+}
+.form-item {
+  border-bottom: 1px solid #f7f7f7;
+  margin-bottom: 20px;
+  font-size: 17px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+}
+.form-item-label {
+  padding-right: 16px;
+  width: 85px;
+}
+.form-item-input {
+  flex: 1;
+}
+.input-tick {
+  width: 40rpx;
+  height: 40rpx;
+}
+.input-tick image{
+  width: 100%;
+  height: 100%;
+}

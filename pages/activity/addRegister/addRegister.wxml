@@ -1,0 +1,38 @@
+<view class="form-header">
+  <h2 class="form-title">填写报名信息</h2>
+  <view class="form-tips">请您正确填写信息~</view>
+</view>
+<mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+<view class="form-body">
+  <form bindsubmit="submit">
+    <view class="form-item">
+      <view class="form-item-label">
+        <label>联系电话</label>
+      </view>
+      <view class="form-item-input">
+        <input placeholder="联系电话" 
+               bind:blur="testTel" 
+               name="telephone"></input>
+      </view>
+      <view class="input-tick" style="display:{{isDisplay}}">
+        <image src="/assets/p-i-icon/tick.svg"></image>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-item-label">
+        <label>报名人数</label>
+      </view>
+      <view class="form-item-input">
+        <picker bindchange="bindPickerChange" 
+                value="{{index}}" 
+                range="{{nums}}"
+                name="nums">
+          <view class="picker">
+            {{nums[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <button form-type="submit" type="primary">提交</button>
+  </form>
+</view>

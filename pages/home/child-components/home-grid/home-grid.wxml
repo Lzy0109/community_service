@@ -1,0 +1,10 @@
+<!--pages/home/child-components/home-grid/home-grid.wxml-->
+<view class="grid">
+  <view class="grid-title">
+    <view class="grid-title-icon">
+      <image src="/assets/grid/dot.svg"></image>
+    </view>
+    <text class="grid-title-label">服务</text>
+  </view>
+  <slot></slot>
+</view>

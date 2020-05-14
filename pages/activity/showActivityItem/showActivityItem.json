@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "activity-item": "/components/show-item/show-item"
+  }
+}

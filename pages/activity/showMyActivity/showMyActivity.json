@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "activity-pannel": "/components/pannel/pannel",
+    "pannel-box-body": "/components/pannel-box-body/pannel-box-body",
+    "pannel-box-footer": "/components/pannel-box-footer/pannel-box-footer",
+    "activity-pannel-box-detail": "/components/pannel-box-detail/pannel-box-detail"
+  }
+}

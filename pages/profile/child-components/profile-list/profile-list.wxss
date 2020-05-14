@@ -1,0 +1,4 @@
+/* pages/profile/child-components/profile-list/profile-list.wxss */
+.profile-list {
+  background-color: #f5f5f5;
+}

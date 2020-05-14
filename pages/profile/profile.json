@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "profile-list-header": "./child-components/profile-list-header/profile-list-header",
+    "profile-list": "./child-components/profile-list/profile-list",
+    "profile-list-item": "./child-components/profile-list-item/profile-list-item",
+    "profile-list-footer": "./child-components/profile-list-footer/profile-list-footer"
+  }
+}

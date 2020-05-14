@@ -1,0 +1,9 @@
+<view class="pannel-box-body">
+  <view class="box-title">
+    <image class="box-icon" src="{{iconPath}}"></image>
+    {{title}}
+  </view>
+  <view class="box-body">
+    <slot/>
+  </view>
+</view>

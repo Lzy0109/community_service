@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "update-pannel": "/components/pannel/pannel",
+    "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips",
+    "info-footer": "/components/pannel-box-footer/pannel-box-footer"
+  }
+}

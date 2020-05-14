@@ -1,0 +1,13 @@
+<bindwx-pannel name="微信授权" desc="Wechat Authorization">
+  <view class="tips">
+    {{tips}}
+  </view>
+  <view class="bind-btn">
+    <button type="primary"
+            open-type="getUserInfo"
+            bindgetuserinfo="bindWx">
+            {{btn_name}}
+    </button>
+  </view>
+  <bindwx-pannel-footer text="智能社区服务平台"/>
+</bindwx-pannel>

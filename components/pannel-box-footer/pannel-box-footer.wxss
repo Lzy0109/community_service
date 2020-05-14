@@ -1,0 +1,7 @@
+/* components/pannel-box-footer/pannel-box-footer.wxss */
+.footer {
+  text-align: center;
+  color: grey;
+  font-size: 14px;
+  padding: 10px;
+}

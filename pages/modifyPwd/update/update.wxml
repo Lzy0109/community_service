@@ -1,0 +1,27 @@
+<update-pannel name="请输入新密码" desc="Enter New Password">
+  <mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+  <view class="update-box">
+    <view class="update-box-label">
+      <label>新密码</label>
+    </view>
+    <view class="update-box-input">
+      <input type="password" placeholder="请输入新密码" bind:blur="testPwd"></input>
+    </view>
+    <view class="input-tick" style="display:{{isDisplay1}}">
+      <image src="/assets/p-i-icon/tick.svg"></image>
+    </view>
+  </view>
+  <view class="update-box">
+    <view class="update-box-label">
+      <label>确认密码</label>
+    </view>
+    <view class="update-box-input">
+      <input type="password" placeholder="请再次输入新密码" bind:blur="testAgain"></input>
+    </view>
+    <view class="input-tick" style="display:{{isDisplay2}}">
+      <image src="/assets/p-i-icon/tick.svg"></image>
+    </view>
+  </view>
+  <button type="primary" bind:tap="submitNewPwd">修改</button>
+  <info-footer text="智能社区服务平台"/>
+</update-pannel>

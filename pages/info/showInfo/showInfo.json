@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "info-pannel": "/components/pannel/pannel",
+    "info-item": "/pages/info/child-components/info-item/info-item",
+    "info-footer": "/components/pannel-box-footer/pannel-box-footer"
+  }
+}

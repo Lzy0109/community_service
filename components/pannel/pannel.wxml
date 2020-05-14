@@ -1,0 +1,7 @@
+<view class="pannel">
+  <view class="pannel-header">
+    <view class="pannel-title">{{name}}</view>
+    <view class="pannel-desc">{{desc}}</view>
+  </view>
+  <slot/>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/news/showNewsItem/showNewsItem.wxml-->
+<news-item title="{{news.title}}"
+           author="{{news.author}}"
+           date="{{news.date}}"
+           imgPath="{{news.image}}"
+           content="{{news.content}}"/>

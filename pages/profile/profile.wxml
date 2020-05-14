@@ -1,0 +1,43 @@
+<profile-list>
+  <profile-list-header username="{{household.name}}"/>
+
+  <navigator url="/pages/info/showInfo/showInfo">
+    <profile-list-item name="我的信息" 
+                       iconPath="/assets/profile/info.svg"/>
+  </navigator>
+  <!-- 非业主不显示此功能 -->
+  <block wx:if="{{household.isOwner}}">
+    <navigator url="/pages/payment/showMyPayment/showMyPayment">
+      <profile-list-item name="我的缴费" 
+                       iconPath="/assets/profile/my_payment.svg"/>
+    </navigator>
+  </block>
+  <navigator url="/pages/activity/showMyActivity/showMyActivity">
+    <profile-list-item name="我的活动" 
+                       iconPath="/assets/profile/register.svg"/>
+  </navigator>
+  <navigator url="/pages/repair/showMyRepair/showMyRepair">
+    <profile-list-item name="我的报修" 
+                       iconPath="/assets/profile/my_repair.svg"/>
+  </navigator>
+  <navigator url="/pages/feedback/showMyFeedback/showMyFeedback">
+    <profile-list-item name="我的反馈" 
+                       iconPath="/assets/profile/my_feedback.svg"/>
+  </navigator>
+  <navigator url="/pages/bindwx/bindwx">
+    <profile-list-item name="微信授权" 
+                       iconPath="/assets/profile/wechat.svg"/>
+  </navigator>
+  <block wx:if="{{household.isOwner}}">
+    <navigator url="/pages/invite/invite">
+      <profile-list-item name="邀请住户" 
+                        iconPath="/assets/profile/invite.svg"/>
+    </navigator>
+  </block>
+  <navigator url="/pages/modifyPwd/testOld/testOld">
+    <profile-list-item name="修改密码" 
+                       iconPath="/assets/profile/pwd.svg"/>
+  </navigator>
+                     
+  <profile-list-footer bind:loginout="loginout"/>
+</profile-list>

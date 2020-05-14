@@ -1,0 +1,11 @@
+<view class="detail-pannel" bind:tap="detailClick">
+  <view class="detail-header">
+    <image class="detail-icon" src="/assets/p-i-icon/info.svg"></image>
+    {{title}}
+  </view>
+  <view class="detail-body">
+    <view class="detail-text">
+      <slot/>
+    </view>
+  </view>
+</view>

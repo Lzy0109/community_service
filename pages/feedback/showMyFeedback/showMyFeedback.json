@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "feedback-pannel": "/components/pannel/pannel",
+    "feedback-detail": "/components/show-detail/show-detail",
+    "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips",
+    "feedback-footer": "/components/pannel-box-footer/pannel-box-footer"
+  }
+}

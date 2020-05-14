@@ -1,0 +1,9 @@
+<view class="body-detail" bind:tap="itemClick">
+  <view class="detail-l-icon">
+    <image src="/assets/p-i-icon/content.svg"></image>
+  </view>
+  <view class="detail-title titleclass">{{name}}</view>
+  <view class="detail-r-icon">
+    <image src="/assets/profile/r_arrow.svg"></image>
+  </view>
+</view>

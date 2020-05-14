@@ -1,0 +1,29 @@
+/* pages/home/child-components/home-grid-item/home-grid-item.wxss */
+.grid-item {
+  position: relative;
+  float: left;
+  padding: 40rpx 40rpx;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: 1rpx solid #d9d9d1;
+  border-radius: 5px;
+}
+/* .grid-item-hover {
+  background-color: rgb(167, 198, 230);
+} */
+.grid-item-icon {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+}
+.grid-item-icon image{
+  width: 100%;
+  height: 100%;
+}
+.grid-item-label {
+  display: block;
+  margin: 40rpx auto;
+  text-align: center;
+  color: #353535;
+}

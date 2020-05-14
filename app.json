@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/register/setPwd/setPwd",
+    "pages/login/login",
+    "pages/home/home",
+    "pages/profile/profile",
+    "pages/info/showInfo/showInfo",
+    "pages/feedback/addFeedback/addFeedback",
+    "pages/feedback/showMyFeedback/showMyFeedback",
+    "pages/repair/addRepair/addRepair",
+    "pages/repair/showMyRepair/showMyRepair",
+    "pages/activity/showActivity/showActivity",
+    "pages/activity/showMyActivity/showMyActivity",
+    "pages/news/showNews/showNews",
+    "pages/news/showNewsItem/showNewsItem",
+    "pages/activity/showActivityItem/showActivityItem",
+    "pages/activity/addRegister/addRegister",
+    "pages/info/updatePwd/updatePwd",
+    "pages/info/updateInfo/updateInfo",
+    "pages/payment/showMyPayment/showMyPayment",
+    "pages/payment/toPay/toPay",
+    "pages/invite/invite",
+    "pages/payment/unPaid/unPaid",
+    "pages/payment/isPaid/isPaid",
+    "pages/activity/showOngoing/showOngoing",
+    "pages/activity/showClosed/showClosed",
+    "pages/family/family",
+    "pages/bindwx/bindwx",
+    "pages/modifyPwd/testOld/testOld",
+    "pages/modifyPwd/update/update",
+    "pages/register/addHousehold/addHousehold"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6699CC",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#6699CC",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home_active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我",
+        "iconPath": "assets/tabbar/me.png",
+        "selectedIconPath": "assets/tabbar/me_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

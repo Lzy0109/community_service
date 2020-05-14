@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "pannel": "/components/pannel/pannel",
+    "pannel-box": "/components/pannel-box/pannel-box",
+    "pannel-box-footer": "/components/pannel-box-footer/pannel-box-footer"
+  },
+  "navigationBarTitleText": "社区活动"
+}

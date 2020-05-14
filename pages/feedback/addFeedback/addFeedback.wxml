@@ -1,0 +1,23 @@
+<view class="form-header">
+  <h2 class="form-title">填写反馈信息</h2>
+  <view class="form-tips">感谢您的反馈~</view>
+</view>
+<mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+<view class="form-body">
+  <form bindsubmit="addFeedback">
+    <view class="form-item">
+      <view class="form-item-label">
+        <label>反馈内容</label>
+      </view>
+      <view class="form-item-input input-textarea">
+        <textarea auto-height
+                  placeholder="仅限100字以内"
+                  name="content"
+                  bindinput="inputContent"
+                  maxlength="100"
+                  name="content"></textarea>
+      </view>
+    </view>
+    <button form-type="submit" type="primary">提交</button>
+  </form>
+</view>

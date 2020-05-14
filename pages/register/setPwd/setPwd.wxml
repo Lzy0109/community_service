@@ -1,0 +1,27 @@
+<set-pannel name="设置密码" desc="Set My Password">
+  <mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+  <view class="update-box">
+    <view class="update-box-label">
+      <label>密码</label>
+    </view>
+    <view class="update-box-input">
+      <input type="password" placeholder="请输入密码" bind:blur="testNew"></input>
+    </view>
+    <view class="input-tick" style="display:{{isDisplay1}}">
+      <image src="/assets/p-i-icon/tick.svg"></image>
+    </view>
+  </view>
+  <view class="update-box">
+    <view class="update-box-label">
+      <label>确认密码</label>
+    </view>
+    <view class="update-box-input">
+      <input type="password" placeholder="请再次输入密码" bind:blur="testNewAgain"></input>
+    </view>
+    <view class="input-tick" style="display:{{isDisplay2}}">
+      <image src="/assets/p-i-icon/tick.svg"></image>
+    </view>
+  </view>
+  <button type="primary" bind:tap="updatePwd">设置</button>
+  <info-footer text="智能社区服务平台"/>
+</set-pannel>

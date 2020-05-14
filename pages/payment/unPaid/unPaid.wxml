@@ -1,0 +1,25 @@
+<pay-pannel name="未缴费的项目" desc="Unpaid items">
+  <block wx:if="{{unpaid == ''}}">
+    <view class="warn">暂无已缴费项目</view>
+  </block>
+  <block wx:else>
+    <pay-box title="未缴费项目" iconPath="/assets/p-i-icon/warn.svg">
+      <block wx:for="{{unpaid}}" wx:key="index">
+        <pay-box-detail name="{{item.name}}"
+                        data-value="{{item.id}}"
+                        bind:itemClick="openDialog">
+        </pay-box-detail>
+      </block>
+    </pay-box>
+  </block>
+  
+  <mp-halfScreenDialog 
+        bindbuttontap="toPay"
+        show="{{show}}"
+        maskClosable="{{false}}" 
+        title="{{dialog_title}}"
+        desc="{{dialog_desc}}"
+        buttons="{{buttons}}"></mp-halfScreenDialog>
+        
+  <pay-footer text="智能社区服务平台" />
+</pay-pannel>

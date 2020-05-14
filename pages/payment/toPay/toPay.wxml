@@ -1,0 +1,22 @@
+<view class="pay-header">
+  <h2 class="pay-title">{{pay_title}}</h2>
+  <view class="pay-tips">智能社区</view>
+  <view class="pay-price">￥{{pay_standard}}</view>
+</view>
+<view class="pay-desc">
+  <view class="desc-item">
+    <text>支付人</text>
+    <view class="item-detail">{{pay_household}}</view>
+  </view>
+  <view class="desc-item">
+    <text>扣费项目描述</text>
+    <view class="item-detail">缴费项目描述</view>
+  </view>
+  <view class="desc-item">
+    <text>扣费方式</text>
+    <view class="item-detail">优先从零钱扣除，零钱不足时将从其他支付方式中扣除</view>
+  </view>
+</view>
+<view class="pry-button">
+  <button type="primary" bind:tap="payment_click">立即支付</button>
+</view>

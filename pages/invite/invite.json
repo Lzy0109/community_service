@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "invite-pannel": "/components/pannel/pannel",
+    "invite-footer": "/components/pannel-box-footer/pannel-box-footer"
+  }
+}

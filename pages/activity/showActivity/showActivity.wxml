@@ -1,0 +1,16 @@
+<pannel name="社区活动" desc="Community Activity">
+  <block wx:if="{{activities == ''}}">
+    <view class="warn">暂无社区活动！</view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{activities}}" wx:key="index">
+      <navigator url="/pages/activity/showActivityItem/showActivityItem?id={{item.id}}">
+        <pannel-box title="{{item.title}}" 
+                  content="{{item.content}}" 
+                  imgPath="{{item.image}}">
+      </pannel-box>
+    </navigator>
+    </block>
+  </block>
+  <pannel-box-footer text="社区活动 强身健体"/>
+</pannel>

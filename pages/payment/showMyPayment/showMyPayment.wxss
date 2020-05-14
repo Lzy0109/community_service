@@ -1,0 +1,9 @@
+/* pages/payment/showMyPayment/showMyPayment.wxss */
+.warn {
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+.link {
+  color: #576b95;
+}

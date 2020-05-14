@@ -1,0 +1,11 @@
+<pay-pannel name="我的缴费" desc="My Payment">
+  <navigator url="/pages/payment/unPaid/unPaid">
+    <pannel-box-body title="未缴费项目" iconPath="/assets/p-i-icon/warn.svg" />
+  </navigator>
+
+  <navigator url="/pages/payment/isPaid/isPaid">
+    <pannel-box-body title="已缴费项目" iconPath="/assets/p-i-icon/ok.svg" />
+  </navigator>
+
+  <pay-footer text="智能社区服务平台"/>
+</pay-pannel>

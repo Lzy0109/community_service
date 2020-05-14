@@ -1,0 +1,17 @@
+<family-pannel name="我的家" desc="My Family">
+  <pannel-box-body title="1栋101" iconPath="/assets/p-i-icon/home.svg">
+    <view class="body-detail" bind:tap="itemClick">
+      <view class="detail-l-icon">
+        <image src="/assets/p-i-icon/username.svg"></image>
+      </view>
+      <view class="detail-title">业主</view>
+    </view>
+
+    <view class="body-detail" bind:tap="itemClick">
+      <view class="detail-l-icon">
+        <image src="/assets/p-i-icon/username.svg"></image>
+      </view>
+      <view class="detail-title">家庭成员</view>
+    </view>
+  </pannel-box-body>
+</family-pannel>

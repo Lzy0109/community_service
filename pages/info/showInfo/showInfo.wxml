@@ -1,0 +1,29 @@
+<info-pannel name="个人信息管理" desc="Personal Information">
+  <info-item iconPath="/assets/p-i-icon/username.svg">
+    <text class="item-text">姓名</text>{{household.name}}
+  </info-item>
+  <info-item iconPath="/assets/p-i-icon/IDcard.svg">
+    <text class="item-text">身份证号码</text>{{household.idcard}}
+  </info-item>
+  <info-item iconPath="/assets/p-i-icon/gender.svg">
+    <text class="item-text">性别</text>{{household.gender}}
+  </info-item>
+  <info-item iconPath="/assets/p-i-icon/age.svg">
+    <text class="item-text">年龄</text>{{household.age}}
+    <text class="item-text">岁</text>
+  </info-item>
+  <info-item iconPath="/assets/p-i-icon/tel.svg">
+    <text class="item-text">联系电话</text>{{household.telephone}}
+  </info-item>
+  <info-item iconPath="/assets/p-i-icon/date.svg">
+    <text class="item-text">入住日期</text>{{household.arrivalDate}}
+  </info-item>
+  <info-item iconPath="/assets/p-i-icon/building.svg">
+    <text class="item-text">楼栋</text>{{household.buildingId}}
+  </info-item>
+  <info-item iconPath="/assets/p-i-icon/room.svg">
+    <text class="item-text">房间号</text>{{household.roomId}}
+  </info-item>
+  <button type="primary" bind:tap="toUpdateInfo">修改信息</button>
+  <info-footer text="智能社区服务平台"/>
+</info-pannel>

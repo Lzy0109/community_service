@@ -1,0 +1,29 @@
+/* components/pannel-box/pannel-box.wxss */
+.pannel-box {
+  border-radius: 10px;
+  padding: 16px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.pannel-box-img {
+  margin-right: 16px;
+  width: 100px;
+  height: 100px;
+  line-height: 60px;
+  text-align: center;
+}
+.pannel-box-img image {
+  width: 100%;
+  height: 100%;
+}
+.pannel-box-title {
+  font-size: 18px; 
+  font-weight: 700;
+}
+.pannel-box-desc {
+  color: grey;
+  font-size: 14px;
+  padding-top: 4px;
+}

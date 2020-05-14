@@ -1,0 +1,8 @@
+<view class="list-body" bind:tap="itemClick">
+  <view class="list-item-icon">
+    <image src="{{iconPath}}"/>
+  </view>
+  <view class="list-item-text">
+    <slot/>
+  </view>
+</view>

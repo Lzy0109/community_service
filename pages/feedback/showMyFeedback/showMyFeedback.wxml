@@ -1,0 +1,31 @@
+<feedback-pannel name="我的反馈" desc="My Feedback">
+  <mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+  <!-- 无报修信息 -->
+  <block wx:if="{{feedbacks == ''}}">
+    <view class="warn">您还没有反馈信息</view>
+    <view class="warn">欢迎您对社区提出各种建议~</view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{feedbacks}}" wx:key="index">
+      <feedback-detail title="反馈信息">
+        <view class="content">
+          <image class="icon" src="/assets/p-i-icon/content.svg"></image>
+          <h4 class="text">反馈内容：</h4>{{item.content}}
+        </view>
+        <view class="date">
+          <image class="icon" src="/assets/p-i-icon/date.svg"></image>
+          <h4 class="text">反馈日期：</h4>{{item.date}}
+        </view>
+        <view class="reply">
+          <image class="icon" src="/assets/p-i-icon/reply.svg"></image>
+          <h4 class="text">回复信息：</h4>
+          <button size="mini" 
+                  type="primary" 
+                  bind:tap="replyClick"
+                  data-value="{{item.reply}}">查看回复</button>
+        </view>
+      </feedback-detail>
+    </block>
+  </block>
+  <feedback-footer text="智能社区服务平台"/>
+</feedback-pannel>

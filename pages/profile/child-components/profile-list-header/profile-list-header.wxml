@@ -1,0 +1,8 @@
+<view class="profile-list-header">
+  <view class="profile-avatar">
+    <image src="/assets/profile/avatar.svg"/>
+  </view>
+  <view class="profile-name">
+    <text>{{username}}</text>
+  </view>
+</view>

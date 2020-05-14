@@ -1,0 +1,18 @@
+<invite-pannel name="邀请我的家人" desc="Invite My Family">
+  <view class="invite-body">
+    <view class="invite-info">
+      <image class="info-icon" src="/assets/p-i-icon/home.svg"></image>
+      <text class="invite-room">1栋101房</text>
+      <image class="info-icon" src="/assets/p-i-icon/username.svg"></image>
+      <text class="invite-household">业主:{{name}}</text>
+    </view>
+    <button type="primary" bind:tap="createQRCode">生成邀请小程序码</button>
+    <view class="invite-image">
+      <image class="invite-QRCode" 
+             src="{{QRCode}}" 
+             mode="aspectFit"></image>
+      <!-- <view class="tips">扫描上方小程序码加入智能社区服务平台</view> -->
+    </view>
+  </view>
+  <invite-footer text="智能社区服务平台" />
+</invite-pannel>

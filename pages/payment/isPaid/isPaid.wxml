@@ -1,0 +1,15 @@
+<pay-pannel name="已缴费的项目" desc="Unpaid items">
+  <block wx:if="{{paid == ''}}">
+    <view class="warn">暂无已缴费项目</view>
+  </block>
+  <block wx:else>
+    <pay-box title="已缴费项目" iconPath="/assets/p-i-icon/ok.svg">
+        <block wx:for="{{paid}}" wx:key="index">
+          <navigator url="/pages/payment/payDetail/payDetail?id={{item.id}}">
+            <pay-box-detail name="{{item.charId}}"></pay-box-detail>
+          </navigator>
+        </block>
+    </pay-box>
+  </block>
+  <pay-footer text="智能社区服务平台" />
+</pay-pannel>

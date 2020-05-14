@@ -1,0 +1,57 @@
+<info-pannel name="修改个人信息" desc="Update Information">
+  <mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+  <form bindsubmit="submitUpdate">
+    <info-item iconPath="/assets/p-i-icon/username.svg">
+      <text class="item-text default">姓名</text>
+      <text class="default">{{household.name}}</text>
+    </info-item>
+    <info-item iconPath="/assets/p-i-icon/IDcard.svg">
+      <text class="item-text default">身份证号码</text>
+      <text class="default">{{household.idcard}}</text>
+    </info-item>
+    <info-item iconPath="/assets/p-i-icon/date.svg">
+      <text class="item-text default">入住日期</text>
+      <text class="default">{{household.arrivalDate}}</text>
+    </info-item>
+    <info-item iconPath="/assets/p-i-icon/building.svg">
+      <text class="item-text  default">楼栋</text>
+      <text class="default">{{household.buildingId}}</text>
+    </info-item>
+    <info-item iconPath="/assets/p-i-icon/room.svg">
+      <text class="item-text  default">房间号</text>
+      <text class="default">{{household.roomId}}</text>
+    </info-item>
+    <info-item iconPath="/assets/p-i-icon/gender.svg">
+      <view class="item-input">
+        <picker bindchange="bindGenderChange" 
+                value="{{genderIndex}}"
+                range="{{gender}}"
+                style="width:300px;"
+                name="gender">
+          <view class="picker item-text">
+            {{gender[genderIndex]}}
+          </view>
+        </picker>
+      </view>
+    </info-item>
+    <info-item iconPath="/assets/p-i-icon/age.svg" class="info-item">
+      <view class="item-input">
+        <input type="number" 
+              value="{{household.age}}" 
+              style="width:50px;"
+              bind:blur="testAge"
+              name="age"/>
+      </view>
+    </info-item>
+    <info-item iconPath="/assets/p-i-icon/tel.svg">
+      <view class="item-input">
+        <input type="number" 
+              value="{{household.telephone}}"
+              bind:blur="testPhone"
+              name="telephone"/>
+      </view>
+    </info-item>
+    <button class="submit" type="primary" form-type="submit">提交修改</button>
+  </form>
+  <info-footer text="智能社区服务平台"/>
+</info-pannel>

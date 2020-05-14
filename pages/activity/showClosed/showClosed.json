@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pannel": "/components/pannel/pannel",
+    "pannel-box-footer": "/components/pannel-box-footer/pannel-box-footer",
+    "activity-detail": "/components/show-detail/show-detail"
+  }
+}

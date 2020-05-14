@@ -1,0 +1,3 @@
+<view class="profile-list-footer">
+      <button bind:tap="loginout">退出登录</button>
+</view>

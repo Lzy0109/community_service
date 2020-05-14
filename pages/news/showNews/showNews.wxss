@@ -1,0 +1,6 @@
+/* pages/news/showNews/showNews.wxss */
+.warn {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px; 
+}

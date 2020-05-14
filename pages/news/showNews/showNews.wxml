@@ -1,0 +1,15 @@
+<pannel name="社区新闻" desc="Community News">
+  <block wx:if="{{news == ''}}">
+    <view class="warn">暂无社区新闻！</view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{news}}" wx:key="index">
+      <navigator url="/pages/news/showNewsItem/showNewsItem?id={{item.id}}">
+        <pannel-box title="{{item.title}}"
+                  imgPath="{{item.image}}">
+        </pannel-box>
+      </navigator>
+    </block>
+  </block>
+  <pannel-box-footer text="社区新闻 了解资讯"/>
+</pannel>

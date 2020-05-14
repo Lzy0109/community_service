@@ -1,0 +1,43 @@
+<view class="logo">
+  <view class="logo_title">
+    <text>智能社区服务平台</text>
+  </view>
+  <image src="/assets/logo/logo.png" mode="aspectFit"></image>
+</view>
+<mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+<view class="login">
+  <view class="choose-login" style="display: {{isShowChose}}">
+    <button type="primary" bind:tap="wx_login">微信登录</button>
+    <button type="primary" bind:tap="cm_login">社区账号登录</button>
+  </view>
+  <view class="login_body" style="display: {{isShowCMLogin}}">
+    <form bindsubmit="cmlogin_submit">
+      <view class="form-item">
+        <view class="form-item-icon">
+          <image src="/assets/login-icon/username.svg"></image>
+        </view>
+        <view class="form-item-input">
+          <input type="text" 
+                 placeholder="Username" 
+                 name="account"           
+                 confirm-type="next"></input>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-icon">
+          <image src="/assets/login-icon/password.svg"></image>
+        </view>
+        <view class="form-item-input">
+          <input type="password" 
+                 placeholder="Password" 
+                 name="password"
+                 confirm-type="go"></input>
+        </view>
+      </view>
+      <button form-type="submit" type="primary">登录</button>
+      <button type="primary" bind:tap="forget">忘记密码</button>
+      <button bind:tap="return_back" type="primary">返回上一级</button>
+    </form>
+  </view>
+  <!-- <text class="visitor" bind:tap="visitor_login">游客登录</text> -->
+</view>
