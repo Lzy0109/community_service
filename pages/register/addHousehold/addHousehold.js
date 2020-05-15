@@ -2,23 +2,28 @@
 var util = require('../../../utils/util.js')
 var common = require('../../../service/common.js')
 import {
-  addHousehold,
-  Household
-} from '../../../service/info.js'
+  RegisterData
+} from '../../../service/user.js'
 Page({
   data: {
+    register: {},
     //bindblur监听并显示
     isDisplay1: "none",
     isDisplay2: "none",
     isDisplay3: "none",
     isDisplay4: "none",
+    isDisplay5: "none",
+    isDisplay6: "none",
     warnMsg: "Warn Msg",
     isError: false,
     genderIndex: 0,
     gender: ['男', '女'],
     date: '2017-09-01',
     buildingId: 1,
-    roomId: 1
+    roomId: 1,
+    password: '',
+    next_btn: '下一步',
+    hidden: false
   },
   //检验姓名
   testName(e) {
@@ -102,37 +107,106 @@ Page({
       genderIndex: e.detail.value
     })
   },
-  addHousehold(e) {
+  //检测密码
+  testPwd(e) {
+    const pwd = e.detail.value
+    const effort = util.checkPwd(pwd)
+    if(effort == 0){
+      this.setData({
+        warnMsg: "请输入密码",
+        isError: true,
+        isDisplay5: "none"
+      })
+    }else if(effort == -1){
+      this.setData({
+        warnMsg: "输入密码仅限6位字符",
+        isError: true,
+        isDisplay5: "none"
+      })
+    }else {
+      this.setData({
+        warnMsg: "",
+        isError: false,
+        isDisplay5: "",
+        password: pwd
+      })
+    }
+  },
+  //确认密码
+  testAgain(e) {
+    const inputPwd = e.detail.value
+    if (inputPwd != this.data.password) {
+      this.setData({
+        warnMsg: "输入的密码与新密码不一致",
+        isDisplay6: 'none',
+        isError: true
+      })
+    } else {
+      this.setData({
+        isDisplay6: '',
+        isError: false
+      })
+    }
+  },
+  next() {
     if (this.data.isDisplay1 == ""
       && this.data.isDisplay2 == ""
       && this.data.isDisplay3 == ""
       && this.data.isDisplay4 == "") {
+      if (this.data.hidden == false) {
+        this.setData({
+          hidden: true,
+          next_btn: '返回'
+        })
+      } else {
+        this.setData({
+          hidden: false,
+          next_btn: '下一步'
+        })
+      }
+    }else{
+      this.setData({
+        warnMsg: "请先将信息填写完整",
+        isError: true
+      })
+    }
+  },
+  addHousehold(e) {
+    if (this.data.isDisplay1 == "" &&
+        this.data.isDisplay2 == "" &&
+        this.data.isDisplay3 == "" &&
+        this.data.isDisplay4 == "" &&
+        this.data.isDisplay5 == "" &&
+        this.data.isDisplay6 == "") {
       const data = e.detail.value
-      const household = new Household(data)
-      household.gender = this.data.gender[this.data.genderIndex]
-      household.buildingId = this.data.buildingId
-      household.roomId = this.data.roomId
-      console.log(household)
+      const register = new RegisterData(data)
+      register.gender = this.data.gender[this.data.genderIndex]
+      register.buildingId = this.data.buildingId
+      register.roomId = this.data.roomId
+      this.setData({
+        register
+      })
+      console.log(register)
 
       //提交表单并跳转登录页
-      addHousehold(household).then(res => {
-        const result = res.data
-        if (result.status == 1) {
-          wx.showToast({
-            title: '注册成功',
-            duration: 2000,
-            success: function () {
-              setTimeout(function () {
-                wx.redirectTo({
-                  url: 'pages/login/login'
-                })
-              }, 2000)
-            }
-          })
-        } else {
-          common.system.busy()
-        }
-      })
+      // addHousehold(household).then(res => {
+      //   const result = res.data
+      //   if (result.status == 1) {
+      //     wx.showToast({
+      //       title: '注册成功',
+      //       duration: 2000,
+      //       success: function () {
+      //         setTimeout(function () {
+      //           wx.redirectTo({
+      //             url: 'pages/login/login'
+      //           })
+      //         }, 2000)
+      //       }
+      //     })
+      //   } else {
+      //     common.system.busy()
+      //   }
+      // })
     } else {
       wx.showModal({
         title: '出错啦',

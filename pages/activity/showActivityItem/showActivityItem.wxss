@@ -1,6 +1,6 @@
 /* pages/activity/showActivityItem/showActivityItem.wxss */
-.act_date {
+.act_info {
   font-size: 14px;
   color: grey;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }

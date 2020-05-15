@@ -87,13 +87,14 @@ Page({
   },
   onLoad: function (options) {
     const hh_id = app.globalData.hh_id
-    getMyUnPaid(hh_id, 0).then(res => {
+    getMyUnPaid(hh_id,0).then(res => {
       const result = res.data
+      console.log(result)
       if (result.status == 1) {
         this.setData({
           unpaid: result.data
         })
-      } else {
+      }else {
         common.system_busy()
       }
     })

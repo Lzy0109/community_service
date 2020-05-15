@@ -3,101 +3,132 @@
   <view class="form-tips">Household Registration</view>
   <view class="form-tips2">默认手机号作为社区账号</view>
 </view>
-<mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
+<mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"/>
 <view class="form-body">
   <form bindsubmit="addHousehold">
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>楼栋</label>
+    <view hidden="{{hidden}}">
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>楼栋</label>
+        </view>
+        <view class="form-item-input">
+          <text style="color: grey;">{{buildingId}}</text>
+        </view>
       </view>
-      <view class="form-item-input">
-        <text style="color: grey;">{{buildingId}}</text>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>房间号</label>
+        </view>
+        <view class="form-item-input">
+          <text style="color: grey;">{{roomId}}</text>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>姓名</label>
+        </view>  
+        <view class="form-item-input">
+          <input placeholder="请输入姓名" bind:blur="testName" name="name"></input>
+        </view>
+        <view class="input-tick" style="display:{{isDisplay1}}">
+          <image src="/assets/p-i-icon/tick.svg"></image>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>身份证</label>
+        </view>  
+        <view class="form-item-input">
+          <input type="idcard" placeholder="请输入身份证号码" name="IDcard" bind:blur="testIDcard"></input>
+        </view>
+        <view class="input-tick" style="display:{{isDisplay2}}">
+          <image src="/assets/p-i-icon/tick.svg"></image>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>性别</label>
+        </view>  
+        <view class="form-item-input">
+          <picker bindchange="bindGenderChange" 
+                  value="{{genderIndex}}" 
+                  range="{{gender}}"
+                  name="gender">
+            <view class="picker">
+              {{gender[genderIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>年龄</label>
+        </view>  
+        <view class="form-item-input">
+          <input placeholder="请输入年龄" bind:blur="testAge" type="number" name="age"></input>
+        </view>
+        <view class="input-tick" style="display:{{isDisplay3}}">
+          <image src="/assets/p-i-icon/tick.svg"></image>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>联系电话</label>
+        </view>
+        <view class="form-item-input">
+          <input placeholder="请输入联系电话" bind:blur="testTel" name="telephone"></input>
+        </view>
+        <view class="input-tick" style="display:{{isDisplay4}}">
+          <image src="/assets/p-i-icon/tick.svg"></image>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>入住日期</label>
+        </view>  
+        <view class="form-item-input">
+          <picker mode="date" 
+                  start="2015-09-01"
+                  end="2020-06-01"
+                  bindchange="bindDateChange"
+                  name="arrivalDate">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
       </view>
     </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>房间号</label>
+    <view hidden="{{!hidden}}">
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>密码</label>
+        </view>
+        <view class="form-item-input">
+          <input placeholder="密码" bind:blur="testPwd" type="password"></input>
+        </view>
+        <view class="input-tick" style="display:{{isDisplay5}}">
+          <image src="/assets/p-i-icon/tick.svg"></image>
+        </view>
       </view>
-      <view class="form-item-input">
-        <text style="color: grey;">{{roomId}}</text>
-      </view>
-    </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>姓名</label>
-      </view>  
-      <view class="form-item-input">
-        <input placeholder="请输入姓名" bind:blur="testName" name="name"></input>
-      </view>
-      <view class="input-tick" style="display:{{isDisplay1}}">
-        <image src="/assets/p-i-icon/tick.svg"></image>
-      </view>
-    </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>身份证</label>
-      </view>  
-      <view class="form-item-input">
-        <input type="idcard" placeholder="请输入身份证号码" name="IDcard" bind:blur="testIDcard"></input>
-      </view>
-      <view class="input-tick" style="display:{{isDisplay2}}">
-        <image src="/assets/p-i-icon/tick.svg"></image>
+      <view class="form-item">
+        <view class="form-item-label">
+          <label>确认密码</label>
+        </view>
+        <view class="form-item-input">
+          <input placeholder="请再次输入密码" bind:blur="testAgain" name="password" type="password"></input>
+        </view>
+        <view class="input-tick" style="display:{{isDisplay6}}">
+          <image src="/assets/p-i-icon/tick.svg"></image>
+        </view>
       </view>
     </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>性别</label>
-      </view>  
-      <view class="form-item-input">
-        <picker bindchange="bindGenderChange" 
-                value="{{genderIndex}}" 
-                range="{{gender}}"
-                name="gender">
-          <view class="picker">
-            {{gender[genderIndex]}}
-          </view>
-        </picker>
-      </view>
+    <view hidden="{{!hidden}}">
+      <button form-type="submit" type="primary">注册</button>
     </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>年龄</label>
-      </view>  
-      <view class="form-item-input">
-        <input placeholder="请输入年龄" bind:blur="testAge" type="number" name="age"></input>
-      </view>
-      <view class="input-tick" style="display:{{isDisplay3}}">
-        <image src="/assets/p-i-icon/tick.svg"></image>
-      </view>
-    </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>联系电话</label>
-      </view>
-      <view class="form-item-input">
-        <input placeholder="请输入联系电话" bind:blur="testTel" name="telephone"></input>
-      </view>
-      <view class="input-tick" style="display:{{isDisplay4}}">
-        <image src="/assets/p-i-icon/tick.svg"></image>
-      </view>
-    </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>入住日期</label>
-      </view>  
-      <view class="form-item-input">
-        <picker mode="date" 
-                start="2015-09-01"
-                end="2020-06-01"
-                bindchange="bindDateChange"
-                name="arrivalDate">
-          <view class="picker">
-            {{date}}
-          </view>
-        </picker>
-      </view>
-    </view>
-    <button form-type="submit" type="primary">注册</button>
+    <button type="primary" bind:tap="next" style="margin-top: 10px;">
+    {{next_btn}}
+    </button>
   </form>
-  <reg-footer text="智能社区服务平台" />
 </view>
+<reg-footer text="智能社区服务平台" />

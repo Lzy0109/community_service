@@ -1,6 +1,7 @@
 // pages/activity/showActivityItem/showActivityItem.js
 var util = require('../../../utils/util.js')
 var common = require('../../../service/common.js')
+var app = getApp()
 import {
   getActivityById,
   isRegister
@@ -36,17 +37,17 @@ Page({
             btn_disabled: true
           })
         }
+        //判断这个活动有无报名
+        // const hh_id = app.globalData.hh_id
+        // if (isRegister(hh_id,act_id)){
+        //   this.setData({
+        //     btn_tips: '已报名',
+        //     btn_disabled: true
+        //   })
+        // }
       }else {
         common.system_busy()
       }
     })
-
-    //判断这个活动有无报名
-    // if (isRegister()){
-    //   this.setData({
-    //     btn_tips: '已报名',
-    //     btn_disabled: true
-    //   })
-    // }
   }
 })

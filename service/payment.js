@@ -1,15 +1,15 @@
 import request from './network.js'
 
 //获取我的未缴费项目
-export function getMyUnPaid(householdId,status) {
+export function getMyUnPaid(householdId, payStatus) {
   return request({
-    url: 'payment?householdId=' + householdId + '&status=' + status
+    url: '/payment?householdId=' + householdId + '&payStatus=' + payStatus
   })
 }
 //获取我的已缴费项目
-export function getMyIsPaid(householdId, status) {
+export function getMyIsPaid(householdId, payStatus) {
   return request({
-    url: '/payment?householdId=' + householdId + '&status=' + status
+    url: '/payment?householdId=' + householdId + '&payStatus=' + payStatus
   })
 }
 //根据住户id、Payment id获取

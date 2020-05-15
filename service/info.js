@@ -42,36 +42,3 @@ export function updateHousehold(household) {
     }
   })
 }
-//修改密码
-export function updatePwd() {
-  return request({
-    url: ''
-  })
-}
-//根据住户id获取原密码
-export function getOldPwd(id) {
-  return request({
-    url: '/XXX/' + id,
-  })
-}
-//新增住户(用户注册)
-export function addHousehold(household) {
-  return request({
-    url: '/household',
-    method: 'POST',
-    header: {
-      'content-type': 'application/x-www-form-urlencoded'
-    },
-    data: {
-      name: household.name,
-      gender: household.gender,
-      age: household.age,
-      telephone: household.telephone,
-      IDcard: household.IDcard,
-      arrivalDate: household.arrivalDate,
-      isOwner: household.isOwner,
-      buildingId: household.buildingId,
-      roomId: household.roomId,
-    }
-  })
-}

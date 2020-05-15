@@ -1,4 +1,20 @@
 import request from './network.js'
+
+export class RegisterData {
+  constructor(data){
+    this.name = data.name;
+    this.gender = data.gender;
+    this.age = data.age;
+    this.telephone = data.telephone;
+    this.IDcard = data.IDcard;
+    this.arrivalDate = data.arrivalDate;
+    this.isOwner = 0,
+    this.buildingId = data.buildingId;
+    this.roomId = data.roomId;
+    this.password = data.password
+  }
+}
+
 //绑定微信
 export function bindWx(hh_id) {
   wx.login({
@@ -70,10 +86,23 @@ export function testOldPwd(hh_id,password) {
     }
   })
 }
-
+//修改密码
 export function updatePwd(hh_id,password) {
   return request({
     url: '',
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      
+    }
+  })
+}
+//注册
+export function resgister(registerData) {
+  return request({
+    url: '',
+    method: 'POST',
     header: {
       'content-type': 'application/x-www-form-urlencoded'
     },

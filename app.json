@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/register/setPwd/setPwd",
     "pages/login/login",
     "pages/home/home",
     "pages/profile/profile",
@@ -14,8 +13,6 @@
     "pages/news/showNews/showNews",
     "pages/news/showNewsItem/showNewsItem",
     "pages/activity/showActivityItem/showActivityItem",
-    "pages/activity/addRegister/addRegister",
-    "pages/info/updatePwd/updatePwd",
     "pages/info/updateInfo/updateInfo",
     "pages/payment/showMyPayment/showMyPayment",
     "pages/payment/toPay/toPay",
@@ -28,7 +25,6 @@
     "pages/modifyPwd/testOld/testOld",
     "pages/modifyPwd/update/update",
     "pages/register/addHousehold/addHousehold"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

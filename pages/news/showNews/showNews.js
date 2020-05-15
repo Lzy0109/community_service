@@ -59,6 +59,9 @@ Page({
     //发送网络请求请求分页数据 pageNo + 1 
     //拼接数据 list.concat(data)
     //如果获得的数据为空 则提示已显示所有数据
+    wx.showToast({
+      title: '没有更多了',
+    })
     wx.hideLoading()
   }
 })
