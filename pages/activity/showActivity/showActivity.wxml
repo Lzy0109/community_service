@@ -5,9 +5,7 @@
   <block wx:else>
     <block wx:for="{{activities}}" wx:key="index">
       <navigator url="/pages/activity/showActivityItem/showActivityItem?id={{item.id}}">
-        <pannel-box title="{{item.title}}" 
-                  content="{{item.content}}" 
-                  imgPath="{{item.image}}">
+        <pannel-box title="{{item.title}}" imgPath="{{item.image}}">
       </pannel-box>
     </navigator>
     </block>

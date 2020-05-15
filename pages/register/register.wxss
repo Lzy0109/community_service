@@ -1,4 +1,3 @@
-/* pages/register/addHousehold/addHousehold.wxss */
 /* pages/register/register.wxss */
 .form-header {
   padding: 48px 32px;

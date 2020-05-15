@@ -16,6 +16,16 @@
           <image class="icon" src="/assets/p-i-icon/date.svg"></image>
           <h4 class="text">反馈日期：</h4>{{item.date}}
         </view>
+        <view class="status">
+          <image class="icon" src="/assets/p-i-icon/status.svg"></image>
+          <h4 class="text">报修状态：</h4>
+          <block wx:if="{{item.status}}">
+            <text style="color: #09BB07;">已回复</text>
+          </block>
+          <block wx:else>
+            <text style="color: #e64340;">未回复</text>
+          </block>
+        </view>
         <view class="reply">
           <image class="icon" src="/assets/p-i-icon/reply.svg"></image>
           <h4 class="text">回复信息：</h4>

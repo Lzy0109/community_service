@@ -23,9 +23,6 @@ page {
   margin-left: 20px;
   margin-right: 20px;
 }
-.choose-login {
-  display: block;
-}
 .login button {
   margin-bottom: 10px;
 }

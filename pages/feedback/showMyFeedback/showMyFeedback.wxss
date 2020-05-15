@@ -11,6 +11,9 @@
 .date {
   padding: 16px 16px 12px;
 }
+.status {
+  padding: 10px 16px 12px;
+}
 .reply {
   padding: 16px 16px 12px;
 }

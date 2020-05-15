@@ -14,7 +14,7 @@ Page({
   replyClick(e) {
     const reply = e.currentTarget.dataset.value
     //如果还没有回复消息
-    if (reply == "") {
+    if (reply == "" || reply == null) {
       this.setData({
         isError: true
       })

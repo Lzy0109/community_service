@@ -1,4 +1,3 @@
-// pages/login/login.js
 var app = getApp()
 var common = require('../../service/common.js')
 import {
@@ -10,27 +9,68 @@ import {
 } from '../../service/info.js'
 Page({
   data: {
+    animationData1: {},
+    animationData2: {},
+    hidden1: false,
+    hidden2: true,
     warnMsg: "",
-    isError: false,
-    isShowChose: "block",
-    isShowCMLogin: "none"
+    isError: false
   },
   //获取openid去数据库查找是否有该绑定微信的用户
   wx_login() {
     wxLogin()
   },
+  //社区账号登录 添加动画 多创建一个动画对象来实现来回切换(官方bug)
   cm_login() {
-    this.setData({
-      isShowChose: "none",
-      isShowCMLogin: "block"
+    var animation1 = wx.createAnimation({
+      duration: 800,
+      timingFunction: 'ease',
     })
+    animation1.opacity(0).step()
+    this.setData({
+      animationData1: animation1.export(),
+    })
+    var animation2 = wx.createAnimation({
+      duration: 800,
+      timingFunction: 'ease',
+    })
+    animation2.opacity(1).step()
+    this.setData({
+      animationData2: animation2.export(),
+    })
+    setTimeout(function () {
+      this.setData({
+        hidden1: true,
+        hidden2: false
+      })
+    }.bind(this), 800)
   },
+  //返回上一级 添加动画
   return_back() {
-    this.setData({
-      isShowChose: "block",
-      isShowCMLogin: "none"
+    var animation1 = wx.createAnimation({
+      duration: 800,
+      timingFunction: 'ease',
     })
+    animation1.opacity(0).step()
+    this.setData({
+      animationData2: animation1.export(),
+    })
+    var animation2 = wx.createAnimation({
+      duration: 800,
+      timingFunction: 'ease',
+    })
+    animation2.opacity(1).step()
+    this.setData({
+      animationData1: animation2.export(),
+    })
+    setTimeout(function () {
+      this.setData({
+        hidden1: false,
+        hidden2: true
+      })
+    }.bind(this), 800)
   },
+  //忘记密码
   forget() {
     wx.showModal({
       title: 'Tips',

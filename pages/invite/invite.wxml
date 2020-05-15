@@ -4,7 +4,7 @@
       <image class="info-icon" src="/assets/p-i-icon/home.svg"></image>
       <text class="invite-room">1栋101房</text>
       <image class="info-icon" src="/assets/p-i-icon/username.svg"></image>
-      <text class="invite-household">业主:{{name}}</text>
+      <text class="invite-household">{{name}}</text>
     </view>
     <button type="primary" bind:tap="createQRCode">生成邀请小程序码</button>
     <view class="invite-image">

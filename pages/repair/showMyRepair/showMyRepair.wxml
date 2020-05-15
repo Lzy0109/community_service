@@ -19,10 +19,10 @@
           <image class="icon" src="/assets/p-i-icon/status.svg"></image>
           <h4 class="text">报修状态：</h4>
           <block wx:if="{{item.status}}">
-            已解决
+            <text style="color: #09BB07;">已解决</text>
           </block>
           <block wx:else>
-            未解决
+            <text style="color: #e64340;">未解决</text>
           </block>
         </view>
         <view class="reply">

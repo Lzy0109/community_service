@@ -6,11 +6,13 @@
 </view>
 <mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"></mp-toptips>
 <view class="login">
-  <view class="choose-login" style="display: {{isShowChose}}">
+  <view class="choose-login" 
+  hidden="{{hidden1}}" animation="{{animationData1}}">
     <button type="primary" bind:tap="wx_login">微信登录</button>
     <button type="primary" bind:tap="cm_login">社区账号登录</button>
   </view>
-  <view class="login_body" style="display: {{isShowCMLogin}}">
+  <view class="login_body" 
+  hidden="{{hidden2}}" animation="{{animationData2}}">
     <form bindsubmit="cmlogin_submit">
       <view class="form-item">
         <view class="form-item-icon">

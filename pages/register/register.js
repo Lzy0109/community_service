@@ -1,9 +1,9 @@
-// pages/register/addHousehold/addHousehold.js
-var util = require('../../../utils/util.js')
-var common = require('../../../service/common.js')
+// pages/register/register.js
+var util = require('../../utils/util.js')
+var common = require('../../service/common.js')
 import {
   RegisterData
-} from '../../../service/user.js'
+} from '../../service/user.js'
 Page({
   data: {
     register: {},
@@ -111,19 +111,19 @@ Page({
   testPwd(e) {
     const pwd = e.detail.value
     const effort = util.checkPwd(pwd)
-    if(effort == 0){
+    if (effort == 0) {
       this.setData({
         warnMsg: "请输入密码",
         isError: true,
         isDisplay5: "none"
       })
-    }else if(effort == -1){
+    } else if (effort == -1) {
       this.setData({
         warnMsg: "输入密码仅限6位字符",
         isError: true,
         isDisplay5: "none"
       })
-    }else {
+    } else {
       this.setData({
         warnMsg: "",
         isError: false,
@@ -164,7 +164,7 @@ Page({
           next_btn: '下一步'
         })
       }
-    }else{
+    } else {
       this.setData({
         warnMsg: "请先将信息填写完整",
         isError: true
@@ -173,11 +173,11 @@ Page({
   },
   addHousehold(e) {
     if (this.data.isDisplay1 == "" &&
-        this.data.isDisplay2 == "" &&
-        this.data.isDisplay3 == "" &&
-        this.data.isDisplay4 == "" &&
-        this.data.isDisplay5 == "" &&
-        this.data.isDisplay6 == "") {
+      this.data.isDisplay2 == "" &&
+      this.data.isDisplay3 == "" &&
+      this.data.isDisplay4 == "" &&
+      this.data.isDisplay5 == "" &&
+      this.data.isDisplay6 == "") {
       const data = e.detail.value
       const register = new RegisterData(data)
       register.gender = this.data.gender[this.data.genderIndex]

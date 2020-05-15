@@ -60,7 +60,7 @@
 				{
 					"id": 0,
 					"name": "扫码注册",
-					"pathName": "pages/register/addHousehold/addHousehold",
+					"pathName": "pages/register/register",
 					"query": "buildingId=1&roomId=1",
 					"scene": 1047
 				}
