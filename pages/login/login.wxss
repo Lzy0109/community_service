@@ -4,46 +4,46 @@ page {
 }
 .logo_title {
   font-weight: 700;
-  font-size: 28px;
-  margin-bottom: 25px;
+  font-size: 56rpx;
+  margin-bottom: 50rpx;
 }
 .logo {
   text-align: center;
-  margin: 40px auto;
-  margin-bottom: 15px;
+  margin: 80rpx auto;
+  margin-bottom: 30rpx;
 }
 .logo image {
-  width: 300px;
-  height: 200px;
+  width: 600rpx;
+  height: 400rpx;
 }
 .login {
   text-align: center;
 }
 .login_body {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
 }
 .login button {
-  margin-bottom: 10px;
+  margin-bottom: 20rpx;
 }
 .form-item {
-  border-radius: 10px;
+  border-radius: 20rpx;
   background: white;
-  margin-bottom: 20px;
-  font-size: 17px;
-  padding: 16px 10px;
+  margin-bottom: 40rpx;
+  font-size: 34rpx;
+  padding: 32rpx 20rpx;
   display: flex;
   align-items: center;
 }
 .form-item-icon {
-  padding-top: 3px;
-  margin-right: 17px;
-  width: 50px;
-  border-right: 1px solid rgba(128, 128, 128, 0.589);
+  padding-top: 6rpx;
+  margin-right: 32rpx;
+  width: 100rpx;
+  border-right: 2rpx solid rgba(128, 128, 128, 0.589);
 }
 .form-item-icon image {
-  width: 20px;
-  height: 20px;
+  width: 40rpx;
+  height: 40rpx;
 }
 .form-item-input {
   flex: 1;

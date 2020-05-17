@@ -58,5 +58,15 @@ export function isRegister(hh_id,act_id) {
 export function addRegister(register) {
   return request({
     url: '',
+    method: 'POST',
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      act_id: register.act_id,
+      hh_id: register.hh_id,
+      telephone: register.telephone,
+      nums: register.nums
+    }
   })
 }

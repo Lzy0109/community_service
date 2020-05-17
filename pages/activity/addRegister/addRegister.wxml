@@ -10,9 +10,7 @@
         <label>联系电话</label>
       </view>
       <view class="form-item-input">
-        <input placeholder="联系电话" 
-               bind:blur="testTel" 
-               name="telephone"></input>
+        <input placeholder="联系电话" bind:blur="testTel" name="telephone"></input>
       </view>
       <view class="input-tick" style="display:{{isDisplay}}">
         <image src="/assets/p-i-icon/tick.svg"></image>
@@ -23,13 +21,9 @@
         <label>报名人数</label>
       </view>
       <view class="form-item-input">
-        <picker bindchange="bindPickerChange" 
-                value="{{index}}" 
-                range="{{nums}}"
-                name="nums">
-          <view class="picker">
-            {{nums[index]}}
-          </view>
+        <picker bindchange="bindPickerChange" value="{{index}}" 
+                range="{{nums}}" name="nums">
+          <view class="picker">{{nums[index]}}</view>
         </picker>
       </view>
     </view>

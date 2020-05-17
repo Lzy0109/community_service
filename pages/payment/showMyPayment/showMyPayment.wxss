@@ -2,7 +2,7 @@
 .warn {
   font-weight: 700;
   text-align: center;
-  padding: 20px;
+  padding: 40rpx;
 }
 .link {
   color: #576b95;

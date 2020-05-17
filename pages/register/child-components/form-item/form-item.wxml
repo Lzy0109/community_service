@@ -1,0 +1,6 @@
+<view class="form-item">
+      <view class="form-item-label">
+        <label>{{name}}</label>
+      </view>
+      <slot/>
+</view>

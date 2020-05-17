@@ -6,7 +6,7 @@ page {
   background-color: #f5f5f5;
 }
 .pannel-header {
-  padding: 80rpx 16px;
+  padding: 80rpx 32rpx;
 }
 .pannel-title {
   text-align: left;
@@ -14,8 +14,8 @@ page {
   font-weight: 700;
 }
 .pannel-desc {
-  margin-top: 5px;
+  margin-top: 10rpx;
   color: grey;
   text-align: left;
-  font-size: 14px;
+  font-size: 28rpx;
 }

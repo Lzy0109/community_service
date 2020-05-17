@@ -1,17 +1,17 @@
 /* components/pannel-box/pannel-box.wxss */
 .pannel-box {
-  border-radius: 10px;
-  padding: 16px;
+  border-radius: 20rpx;
+  padding: 32rpx;
   background-color: white;
   display: flex;
   align-items: center;
   margin-bottom: 40rpx;
 }
 .pannel-box-img {
-  margin-right: 16px;
-  width: 100px;
-  height: 100px;
-  line-height: 60px;
+  margin-right: 32rpx;
+  width: 200rpx;
+  height: 200rpx;
+  line-height: 120rpx;
   text-align: center;
 }
 .pannel-box-img image {
@@ -19,11 +19,11 @@
   height: 100%;
 }
 .pannel-box-title {
-  font-size: 18px; 
+  font-size: 36rpx; 
   font-weight: 700;
 }
 .pannel-box-desc {
   color: grey;
-  font-size: 14px;
-  padding-top: 4px;
+  font-size: 28rpx;
+  padding-top: 8rpx;
 }

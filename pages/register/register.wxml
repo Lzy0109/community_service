@@ -5,130 +5,107 @@
 </view>
 <mp-toptips msg="{{warnMsg}}" type="error" show="{{isError}}"/>
 <view class="form-body">
-  <form bindsubmit="addHousehold">
-    <view hidden="{{hidden}}">
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>楼栋</label>
-        </view>
+  <form bindsubmit="submitRegister">
+    <!-- 表单第一部分 -->
+    <view hidden="{{hidden1}}" animation="{{animationData1}}">
+      <form-item name="楼栋">
         <view class="form-item-input">
           <text style="color: grey;">{{buildingId}}</text>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>房间号</label>
-        </view>
+      </form-item>
+      <form-item name="房间号">
         <view class="form-item-input">
           <text style="color: grey;">{{roomId}}</text>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>姓名</label>
-        </view>  
+      </form-item>
+      <form-item name="姓名">
         <view class="form-item-input">
           <input placeholder="请输入姓名" bind:blur="testName" name="name"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay1}}">
           <image src="/assets/p-i-icon/tick.svg"></image>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>身份证</label>
-        </view>  
+      </form-item>
+      <form-item name="身份证">
         <view class="form-item-input">
-          <input type="idcard" placeholder="请输入身份证号码" name="IDcard" bind:blur="testIDcard"></input>
+          <input type="idcard" placeholder="请输入身份证号码" name="IDcard" 
+                 bind:blur="testIDcard"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay2}}">
           <image src="/assets/p-i-icon/tick.svg"></image>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>性别</label>
-        </view>  
+      </form-item>
+      <form-item name="性别">
         <view class="form-item-input">
-          <picker bindchange="bindGenderChange" 
-                  value="{{genderIndex}}" 
-                  range="{{gender}}"
-                  name="gender">
-            <view class="picker">
-              {{gender[genderIndex]}}
-            </view>
+          <picker bindchange="bindGenderChange" value="{{genderIndex}}" 
+                  range="{{gender}}" name="gender">
+            <view class="picker">{{gender[genderIndex]}}</view>
           </picker>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>年龄</label>
-        </view>  
+      </form-item>
+      <form-item name="年龄">
         <view class="form-item-input">
-          <input placeholder="请输入年龄" bind:blur="testAge" type="number" name="age"></input>
+          <input placeholder="请输入年龄" bind:blur="testAge" type="number"   
+                 name="age"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay3}}">
           <image src="/assets/p-i-icon/tick.svg"></image>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>联系电话</label>
-        </view>
+      </form-item>
+      <form-item name="联系电话">
         <view class="form-item-input">
-          <input placeholder="请输入联系电话" bind:blur="testTel" name="telephone"></input>
+          <input placeholder="请输入联系电话" bind:blur="testTel"       
+                 name="telephone"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay4}}">
           <image src="/assets/p-i-icon/tick.svg"></image>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>入住日期</label>
-        </view>  
+      </form-item>
+      <form-item name="入住日期">
         <view class="form-item-input">
-          <picker mode="date" 
-                  start="2015-09-01"
-                  end="2020-06-01"
-                  bindchange="bindDateChange"
-                  name="arrivalDate">
-            <view class="picker">
-              {{date}}
-            </view>
+          <picker mode="date" start="2015-09-01" end="2020-06-01"
+                  bindchange="bindDateChange" name="arrivalDate">
+            <view class="picker">{{date}}</view>
           </picker>
         </view>
-      </view>
+      </form-item>
     </view>
-    <view hidden="{{!hidden}}">
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>密码</label>
-        </view>
+    <!-- 表单第二部分 -->
+    <view hidden="{{hidden2}}" animation="{{animationData2}}">
+      <form-item name="密码">
         <view class="form-item-input">
           <input placeholder="密码" bind:blur="testPwd" type="password"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay5}}">
           <image src="/assets/p-i-icon/tick.svg"></image>
         </view>
-      </view>
-      <view class="form-item">
-        <view class="form-item-label">
-          <label>确认密码</label>
-        </view>
+      </form-item>
+      <form-item name="确认密码">
         <view class="form-item-input">
-          <input placeholder="请再次输入密码" bind:blur="testAgain" name="password" type="password"></input>
+          <input placeholder="请再次输入密码" bind:blur="testAgain" 
+                 name="password" type="password"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay6}}">
           <image src="/assets/p-i-icon/tick.svg"></image>
         </view>
-      </view>
+      </form-item>
     </view>
-    <view hidden="{{!hidden}}">
+    <!-- 注册按钮 -->
+    <view hidden="{{hidden2}}" animation="{{animationData2}}">
       <button form-type="submit" type="primary">注册</button>
     </view>
-    <button type="primary" bind:tap="next" style="margin-top: 10px;">
-    {{next_btn}}
-    </button>
+    <!-- 下一步/返回上一级按钮 -->
+    <view hidden="{{hidden2}}" animation="{{animationData2}}">
+      <button type="primary" bind:tap="next" style="margin-top: 10px;">
+      {{next_btn}}
+      </button>
+    </view>
+    <!-- 下一步/返回上一级按钮 -->
+    <view hidden="{{hidden1}}" animation="{{animationData1}}">
+      <button type="primary" bind:tap="next" style="margin-top: 10px;">
+      {{next_btn}}
+      </button>
+    </view>
   </form>
 </view>
 <reg-footer text="智能社区服务平台" />

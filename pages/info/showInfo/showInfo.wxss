@@ -1,8 +1,8 @@
 /* pages/info/showInfo/showInfo.wxss */
 .item-text {
   font-weight: 700;
-  font-size: 17px;
-  margin-right: 14px;
+  font-size: 34rpx;
+  margin-right: 28rpx;
 }
 button {
   margin-top: 40rpx;

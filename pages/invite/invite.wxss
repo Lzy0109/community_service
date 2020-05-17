@@ -3,34 +3,34 @@
   background-color: white;
 }
 .invite-info {
-  font-size: 18px;
+  font-size: 36rpx;
   font-weight: 700;
-  padding: 16px;
+  padding: 132rpx;
   display: flex;
   align-items: center;
 }
 .info-icon {
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
   flex: 2;
 }
 .invite-info text {
   flex: 3;
 }
 .invite-btn {
-  margin-top: 30px; 
+  margin-top: 60rpx; 
 }
 .invite-image {
   text-align: center;
 }
 .invite-QRCode {
-  width: 300px;
-  height: 300px;
-  margin: 13px; 
+  width: 600rpx;
+  height: 600rpx;
+  margin: 26rpx; 
 }
 .tips {
   color: grey;
-  font-size: 13px;
-  padding: 33px;
+  font-size: 26rpx;
+  padding: 66rpx;
 }

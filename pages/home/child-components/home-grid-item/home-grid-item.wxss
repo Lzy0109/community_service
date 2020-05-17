@@ -6,8 +6,8 @@
   width: 50%;
   height: 50%;
   box-sizing: border-box;
-  border: 1rpx solid #d9d9d1;
-  border-radius: 5px;
+  border: 2rpx solid #d9d9d1;
+  border-radius: 10rpx;
 }
 /* .grid-item-hover {
   background-color: rgb(167, 198, 230);

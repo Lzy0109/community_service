@@ -1,42 +1,42 @@
 /* pages/repair/addRepair/addRepair.wxss */
 .form-header {
-  padding: 48px 32px;
+  padding: 96rpx 64rpx;
   text-align: center;
 }
 .form-title {
-  font-size: 22px;
+  font-size: 44rpx;
   font-weight: 700;
   line-height: 1.36;
 }
 .form-tips {
   color: #888888;
-  font-size: 15px;
-  margin-top: 16px;
+  font-size: 30rpx;
+  margin-top: 32rpx;
 }
 .form-body {
   padding: 40rpx;
 }
 .form-item {
-  border-bottom: 1px solid #f7f7f7;
-  margin-bottom: 20px;
-  font-size: 17px;
-  padding: 16px 20px;
+  border-bottom: 2rpx solid #f7f7f7;
+  margin-bottom: 40rpx;
+  font-size: 34rpx;
+  padding: 32rpx 40rpx;
   display: flex;
   align-items: center;
 }
 .form-item-label {
-  padding-right: 16px;
-  width: 85px;
+  padding-right: 32rpx;
+  width: 170rpx;
 }
 .form-item-input {
   flex: 1;
 }
 .input-textarea{
-  height: 170px;
-  font-size: 15px;
+  height: 340rpx;
+  font-size: 30rpx;
 }
 .form-item-input textarea {
-  width: 192px;
+  width: 384rpx;
 }
 .input-tick {
   width: 40rpx;

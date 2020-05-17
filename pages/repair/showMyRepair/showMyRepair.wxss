@@ -3,30 +3,30 @@
   padding-left: 80rpx;
   padding-bottom: 10rpx;
   font-weight: 700;
-  font-size: 20px; 
+  font-size: 40rpx; 
 }
 .content {
-  padding: 16px 16px 12px;
-  letter-spacing: 1rpx;
+  padding: 32rpx 32rpx 24rpx;
+  letter-spacing: 1px;
 }
 .date {
-  padding: 10px 16px 12px;
+  padding: 20rpx 32rpx 24rpx;
   display: flex;
 }
 .status {
-  padding: 10px 16px 12px;
+  padding: 20rpx 32rpx 24rpx;
 }
 .reply {
-  padding: 10px 16px 12px;
+  padding: 20rpx 32rpx 24rpx;
 }
 .text {
   font-weight: 700;
 }
 .icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
 }
 .reply button {
-  margin-bottom: -10px;
+  margin-bottom: -20rpx;
 }

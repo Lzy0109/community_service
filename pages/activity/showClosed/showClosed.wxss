@@ -2,16 +2,16 @@
 .warn {
   text-align: center;
   font-weight: 700;
-  font-size: 20px; 
+  font-size: 40rpx; 
 }
 .nums{
-  padding: 16px 16px 12px;
+  padding: 32rpx 32rpx 24rpx;
 }
 .date {
-  padding: 10px 16px 12px;
+  padding: 20rpx 32rpx 24rpx;
 }
 .icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
 }

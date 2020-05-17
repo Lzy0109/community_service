@@ -1,36 +1,32 @@
 /* components/show-item/item.wxss */
 .item-header {
   padding: 60rpx;
-  border-bottom: 1px solid #f5f5f5;
-  margin: 10px;
+  border-bottom: 2rpx solid #f5f5f5;
+  margin: 20rpx;
 }
 .item-title {
-  font-size: 24px;
+  font-size: 48rpx;
   font-weight: 700;
 }
 .item-author {
-  margin-top: 5px;
+  margin-top: 10rpx;
   color: grey;
   text-align: left;
-  font-size: 14px;
+  font-size: 28rpx;
 }
 .item-date {
-  margin-top: 5px;
+  margin-top: 10rpx;
   color: grey;
   text-align: left;
-  font-size: 14px;
+  font-size: 28rpx;
 }
-
 .item-img {
   padding: 60rpx;
 }
-
-
 .item-body {
   padding: 60rpx;
   margin-bottom: 60rpx;
 }
-
 .item-content{
   letter-spacing: 2rpx;
 }

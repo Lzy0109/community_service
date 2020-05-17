@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips",
-    "reg-footer": "/components/pannel-box-footer/pannel-box-footer"
+    "reg-footer": "/components/pannel-box-footer/pannel-box-footer",
+    "form-item": "./child-components/form-item/form-item"
   },
   "navigationBarTitleText": ""
 }

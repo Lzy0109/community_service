@@ -7,7 +7,10 @@ import {
 Page({
   data: {
     register: {},
-    //bindblur监听并显示
+    animationData1: {},
+    animationData2: {},
+    hidden1: false,
+    hidden2: true,
     isDisplay1: "none",
     isDisplay2: "none",
     isDisplay3: "none",
@@ -28,13 +31,11 @@ Page({
   //检验姓名
   testName(e) {
     const name = e.detail.value
-    //验证姓名无误 打勾
     if (util.checkName(name)) {
       this.setData({
         isDisplay1: ""
       })
     } else {
-      //有误 报错
       this.setData({
         warnMsg: "输入姓名格式不正确",
         isError: true,
@@ -45,13 +46,11 @@ Page({
   //检验身份证
   testIDcard(e) {
     const IDcard = e.detail.value
-    //验证身份证无误 打勾
     if (util.checkIDcard(IDcard)) {
       this.setData({
         isDisplay2: ""
       })
     } else {
-      //有误 报错
       this.setData({
         warnMsg: "输入身份证格式不正确",
         isError: true,
@@ -62,13 +61,11 @@ Page({
   //检验年龄
   testAge(e) {
     const age = e.detail.value
-    //验证身份证无误 打勾
     if (util.checkAge(age)) {
       this.setData({
         isDisplay3: ""
       })
     } else {
-      //有误 报错
       this.setData({
         warnMsg: "输入年龄不正确",
         isError: true,
@@ -76,18 +73,16 @@ Page({
       })
     }
   },
-  //检验电话
+  //检验联系电话
   testTel(e) {
     const phone = e.detail.value
     if (!util.checkPhone(phone)) {
-      //有误 报错
       this.setData({
         warnMsg: "联系电话格式不正确",
         isError: true,
         isDisplay4: "none"
       })
     } else {
-      //验证联系电话无误 打勾
       this.setData({
         isDisplay4: ""
       })
@@ -153,16 +148,55 @@ Page({
       && this.data.isDisplay2 == ""
       && this.data.isDisplay3 == ""
       && this.data.isDisplay4 == "") {
-      if (this.data.hidden == false) {
-        this.setData({
-          hidden: true,
-          next_btn: '返回'
-        })
+      //动画效果
+      if (this.data.hidden1 == false) {
+        var animation1 = wx.createAnimation({
+      duration: 800,
+      timingFunction: 'ease',
+    })
+    animation1.opacity(0).step()
+    this.setData({
+      animationData1: animation1.export(),
+    })
+    var animation2 = wx.createAnimation({
+      duration: 800,
+      timingFunction: 'ease',
+    })
+    animation2.opacity(1).step()
+    this.setData({
+      animationData2: animation2.export(),
+    })
+    setTimeout(function () {
+      this.setData({
+        hidden1: true,
+        hidden2: false,
+        next_btn: '返回上一级'
+      })
+    }.bind(this), 800)
       } else {
-        this.setData({
-          hidden: false,
-          next_btn: '下一步'
+        var animation1 = wx.createAnimation({
+          duration: 800,
+          timingFunction: 'ease',
         })
+        animation1.opacity(0).step()
+        this.setData({
+          animationData2: animation1.export(),
+        })
+        var animation2 = wx.createAnimation({
+          duration: 800,
+          timingFunction: 'ease',
+        })
+        animation2.opacity(1).step()
+        this.setData({
+          animationData1: animation2.export(),
+        })
+        setTimeout(function () {
+          this.setData({
+            hidden1: false,
+            hidden2: true,
+            next_btn: '下一步'
+          })
+        }.bind(this), 800)
       }
     } else {
       this.setData({
@@ -171,14 +205,13 @@ Page({
       })
     }
   },
-  addHousehold(e) {
-    if (this.data.isDisplay1 == "" &&
-      this.data.isDisplay2 == "" &&
-      this.data.isDisplay3 == "" &&
-      this.data.isDisplay4 == "" &&
-      this.data.isDisplay5 == "" &&
-      this.data.isDisplay6 == "") {
+  //提交表单
+  submitRegister(e) {
+    if (this.data.isDisplay1 == "" && this.data.isDisplay2 == "" &&
+      this.data.isDisplay3 == "" && this.data.isDisplay4 == "" &&
+      this.data.isDisplay5 == "" && this.data.isDisplay6 == "") {
       const data = e.detail.value
+      //封装数据
       const register = new RegisterData(data)
       register.gender = this.data.gender[this.data.genderIndex]
       register.buildingId = this.data.buildingId
@@ -187,7 +220,6 @@ Page({
         register
       })
       console.log(register)
-
       //提交表单并跳转登录页
       // addHousehold(household).then(res => {
       //   const result = res.data
@@ -219,5 +251,9 @@ Page({
     //获取buildingId，roomId
     console.log("获取到的楼栋id：" + options.buildingId)
     console.log("获取到的房间id：" + options.roomId)
+    this.setData({
+      buildingId: options.buildingId,
+      roomId: options.roomId
+    })
   }
 })

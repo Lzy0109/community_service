@@ -1,18 +1,14 @@
-/* pages/modifyPwd/update/update.wxss */
-.update-box {
-  background-color: white;
+/* pages/register/child-components/form-item/form-item.wxss */
+.form-item {
   border-bottom: 2rpx solid #f7f7f7;
+  margin-bottom: 40rpx;
   font-size: 34rpx;
   padding: 32rpx 40rpx;
   display: flex;
   align-items: center;
 }
-.update-box-label {
-  padding-right: 32rpx;
+.form-item-label {
   width: 170rpx;
-}
-.update-box-input {
-  flex: 1;
 }
 .input-tick {
   width: 40rpx;
@@ -21,7 +17,4 @@
 .input-tick image{
   width: 100%;
   height: 100%;
-}
-button {
-  margin-top: 40rpx;
 }

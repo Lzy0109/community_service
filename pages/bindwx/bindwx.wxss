@@ -1,13 +1,13 @@
 /* pages/bindwx/bindwx.wxss */
 .bind-btn {
-  margin-bottom: 220px;
+  margin-bottom: 440rpx;
 }
 .tips {
-  padding: 80rpx 16px;
+  padding: 80rpx 32rpx;
   text-align: center;
   color: grey;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 44rpx;
 }
 .avatar {
   width: 128rpx;

@@ -4,14 +4,14 @@
 }
 .item-text {
   font-weight: 700;
-  font-size: 17px;
-  margin-right: 14px;
+  font-size: 34rpx;
+  margin-right: 28rpx;
 }
 .item-input input{
-  width: 250px;
-  border: 1px solid #5c5a5a2f;
-  border-radius: 5px;
-  padding: 6px;
+  width: 500rpx;
+  border: 2rpx solid #5c5a5a2f;
+  border-radius: 10rpx;
+  padding: 12rpx;
 }
 .submit {
   margin: 40rpx;

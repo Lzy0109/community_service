@@ -1,6 +1,6 @@
 /* pages/activity/showActivityItem/showActivityItem.wxss */
 .act_info {
-  font-size: 14px;
+  font-size: 28rpx;
   color: grey;
-  margin-bottom: 20px;
+  margin-bottom: 40rpx;
 }

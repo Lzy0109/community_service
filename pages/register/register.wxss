@@ -1,47 +1,28 @@
 /* pages/register/register.wxss */
 .form-header {
-  padding: 48px 32px;
+  padding: 96rpx 64rpx;
   text-align: center;
 }
 .form-title {
-  font-size: 28px;
+  font-size: 56rpx;
   font-weight: 700;
   line-height: 1.36;
 }
 .form-tips {
   color: #888888;
-  font-size: 17px;
-  margin-top: 16px;
+  font-size: 34rpx;
+  margin-top: 32rpx;
 }
 .form-tips2 {
   color: #888888;
-  font-size: 15px;
-  margin-top: 16px;
+  font-size: 30rpx;
+  margin-top: 32rpx;
 }
 .form-body {
   padding: 40rpx;
 }
-.form-item {
-  border-bottom: 1px solid #f7f7f7;
-  margin-bottom: 20px;
-  font-size: 17px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-}
-.form-item-label {
-  padding-right: 7px;
-  width: 85px;
-}
 .form-item-input {
   flex: 1;
-}
-.input-textarea{
-  height: 170px;
-  font-size: 15px;
-}
-.form-item-input textarea {
-  width: 192px;
 }
 .input-tick {
   width: 40rpx;
