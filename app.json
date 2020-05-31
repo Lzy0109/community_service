@@ -10,6 +10,7 @@
     "pages/repair/showMyRepair/showMyRepair",
     "pages/activity/showActivity/showActivity",
     "pages/activity/showMyActivity/showMyActivity",
+    "pages/activity/addRegister/addRegister",
     "pages/news/showNews/showNews",
     "pages/news/showNewsItem/showNewsItem",
     "pages/activity/showActivityItem/showActivityItem",

@@ -1,25 +1,11 @@
 import request from './network.js'
-
-export class Household {
-  constructor(household) {
-    this.name = household.name;
-    this.gender = household.gender;
-    this.age = household.age;
-    this.telephone = household.telephone;
-    this.IDcard = household.IDcard;
-    this.arrivalDate = household.arrivalDate;
-    this.isOwner = 0,
-    this.buildingId = household.buildingId;
-    this.roomId = household.roomId;
-  }
-}
-//获取我的个人信息
+// 获取我的个人信息
 export function getHouseholdById(id) {
   return request({
     url: '/household/' + id,
   })
 }
-//修改个人信息
+// 修改个人信息
 export function updateHousehold(household) {
   return request({
     url: '/household',

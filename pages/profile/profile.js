@@ -9,8 +9,7 @@ Page({
     household: {}
   },
   loginout() {
-    //退出登录 清空全局数据
-    console.log("退出登录 清空全局数据")
+    // 退出登录 清空全局数据
     app.globalData.hh_id = ""
     wx.redirectTo({
       url: '/pages/login/login',
@@ -21,11 +20,15 @@ Page({
     getHouseholdById(id).then(res => {
       const result = res.data
       console.log(result)
-      if(result.status == 1){
+      if (result.status == 200) {
         this.setData({
           household: result.data
         })
-      }else {
+      }
+      if (result.status == 401) {
+        common.systemGetError()
+      }
+      if (result.status == 500) {
         common.system_busy()
       }
     })

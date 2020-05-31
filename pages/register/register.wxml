@@ -8,14 +8,14 @@
   <form bindsubmit="submitRegister">
     <!-- 表单第一部分 -->
     <view hidden="{{hidden1}}" animation="{{animationData1}}">
-      <form-item name="楼栋">
+      <form-item name="楼栋" class="default">
         <view class="form-item-input">
-          <text style="color: grey;">{{buildingId}}</text>
+          <text>{{buildingName}}</text>
         </view>
       </form-item>
-      <form-item name="房间号">
+      <form-item name="房间号" class="default">
         <view class="form-item-input">
-          <text style="color: grey;">{{roomId}}</text>
+          <text>{{roomNum}}</text>
         </view>
       </form-item>
       <form-item name="姓名">

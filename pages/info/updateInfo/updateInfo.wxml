@@ -15,11 +15,11 @@
     </info-item>
     <info-item iconPath="/assets/p-i-icon/building.svg">
       <text class="item-text  default">楼栋</text>
-      <text class="default">{{household.buildingId}}</text>
+      <text class="default">{{household.buildingName}}</text>
     </info-item>
     <info-item iconPath="/assets/p-i-icon/room.svg">
       <text class="item-text  default">房间号</text>
-      <text class="default">{{household.roomId}}</text>
+      <text class="default">{{household.roomNum}}</text>
     </info-item>
     <info-item iconPath="/assets/p-i-icon/gender.svg">
       <view class="item-input">
@@ -38,9 +38,10 @@
       <view class="item-input">
         <input type="number" 
               value="{{household.age}}" 
-              style="width:50px;"
+              style="width:70rpx;"
               bind:blur="testAge"
               name="age"/>
+        <text class="item-text t">岁</text>
       </view>
     </info-item>
     <info-item iconPath="/assets/p-i-icon/tel.svg">

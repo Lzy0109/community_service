@@ -10,8 +10,16 @@
 .date {
   padding: 20rpx 32rpx 24rpx;
 }
+.status {
+  padding: 20rpx 32rpx 50rpx;
+}
 .icon {
   width: 40rpx;
   height: 40rpx;
   margin-right: 10rpx;
+}
+.cancel-btn {
+  color: white;
+  background-color:#e64340;
+  float: right;
 }

@@ -27,13 +27,16 @@
         <image src="/assets/p-i-icon/tick.svg"></image>
       </view>
     </view>
-    <view class="form-item">
-      <view class="form-item-label">
-        <label>报修内容</label>
+    <view class="form-item-content">
+      <view class="form-item-content-label">
+        <label>报修内容</label>      
       </view>
       <view class="form-item-input input-textarea">
         <textarea auto-height placeholder="仅限100字以内" bindinput="inputContent"
                   maxlength="100" name="content"></textarea>
+      </view>
+      <view class="textarea-tips">
+          <text>{{content_input}}/100</text>
       </view>
     </view>
     <button form-type="submit" type="primary">提交</button>

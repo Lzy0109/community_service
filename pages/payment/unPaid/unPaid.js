@@ -22,55 +22,26 @@ Page({
         value: 1
       }
     ],
-    //未缴费项目
-    unpaid: [
-      // {
-      //   id: 3,
-      //   name: '第三次社区缴费项目',
-      //   desc: '第三次缴费项目描述',
-      //   standard: 100,
-      //   creationDate: '2020-20-20',
-      //   note: ''
-      // },
-      // {
-      //   id: 4,
-      //   name: '第四次社区缴费项目',
-      //   desc: '第四次缴费项目描述',
-      //   standard: 100,
-      //   creationDate: '2020-20-20',
-      //   note: ''
-      // },
-      // {
-      //   id: 5,
-      //   name: '第五次社区缴费项目',
-      //   desc: '第五次缴费项目描述',
-      //   standard: 100,
-      //   creationDate: '2020-20-20',
-      //   note: ''
-      // },
-      // {
-      //   id: 6,
-      //   name: '第六次社区缴费项目',
-      //   desc: '第六次缴费项目描述',
-      //   standard: 100,
-      //   creationDate: '2020-20-20',
-      //   note: ''
-      // }
-    ],
+    // 未缴费项目
+    unpaid: [],
   },
   openDialog(e) {
     console.log(e)
-    const char_id = e.currentTarget.dataset.value
-    //获取点击项目的title和desc
+    const charId = e.currentTarget.dataset.value
+    const payment = this.data.unpaid.find((item) => {
+      return item.charId == charId
+    })
+    console.log(payment)
+    // 获取点击项目的title和desc
     this.setData({
-      dialog_id: char_id, //点击的缴费项目id
-      dialog_title: '点击的缴费项目',
-      dialog_desc: '点击的缴费项目描述',
+      dialog_id: payment.id, // 点击的缴费项目id
+      dialog_title: payment.chargeName,
+      dialog_desc: payment.description,
       show: true
     })
   },
   toPay(e) {
-    //获取点击的pay_id
+    // 获取点击的pay_id
     if (e.detail.index == 1) {
       this.setData({
         show: false
@@ -85,17 +56,17 @@ Page({
       })
     }
   },
-  onLoad: function (options) {
+  onShow: function (options) {
     const hh_id = app.globalData.hh_id
-    getMyUnPaid(hh_id,0).then(res => {
+    getMyUnPaid(hh_id, 0).then(res => {
       const result = res.data
       console.log(result)
-      if (result.status == 1) {
+      if (result.status == 200) {
         this.setData({
           unpaid: result.data
         })
-      }else {
-        common.system_busy()
+      } else {
+        common.systemBusy()
       }
     })
   }

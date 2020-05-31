@@ -2,7 +2,11 @@
 var util = require('../../utils/util.js')
 var common = require('../../service/common.js')
 import {
-  RegisterData
+  getRoomById
+} from '../../service/room.js'
+import {
+  RegisterData, 
+  resgister
 } from '../../service/user.js'
 Page({
   data: {
@@ -11,169 +15,186 @@ Page({
     animationData2: {},
     hidden1: false,
     hidden2: true,
-    isDisplay1: "none",
-    isDisplay2: "none",
-    isDisplay3: "none",
-    isDisplay4: "none",
-    isDisplay5: "none",
-    isDisplay6: "none",
-    warnMsg: "Warn Msg",
+    isDisplay1: 'none',
+    isDisplay2: 'none',
+    isDisplay3: 'none',
+    isDisplay4: 'none',
+    isDisplay5: 'none',
+    isDisplay6: 'none',
+    warnMsg: '',
     isError: false,
     genderIndex: 0,
     gender: ['男', '女'],
-    date: '2017-09-01',
+    date: '2017-09-01',  //创建时间
     buildingId: 1,
+    buildingName: '',
     roomId: 1,
+    roomNum: '',
     password: '',
     next_btn: '下一步',
     hidden: false
   },
-  //检验姓名
+  // 检验姓名
   testName(e) {
     const name = e.detail.value
     if (util.checkName(name)) {
       this.setData({
-        isDisplay1: ""
+        isDisplay1: ''
       })
     } else {
       this.setData({
-        warnMsg: "输入姓名格式不正确",
+        warnMsg: '输入姓名格式不正确',
         isError: true,
-        isDisplay1: "none"
+        isDisplay1: 'none'
       })
     }
   },
-  //检验身份证
+  // 检验身份证
   testIDcard(e) {
     const IDcard = e.detail.value
     if (util.checkIDcard(IDcard)) {
       this.setData({
-        isDisplay2: ""
+        isDisplay2: ''
       })
     } else {
       this.setData({
-        warnMsg: "输入身份证格式不正确",
+        warnMsg: '输入身份证格式不正确',
         isError: true,
-        isDisplay2: "none"
+        isDisplay2: 'none'
       })
     }
   },
-  //检验年龄
+  // 检验年龄
   testAge(e) {
     const age = e.detail.value
     if (util.checkAge(age)) {
       this.setData({
-        isDisplay3: ""
+        isDisplay3: ''
       })
     } else {
       this.setData({
-        warnMsg: "输入年龄不正确",
+        warnMsg: '输入年龄不正确',
         isError: true,
-        isDisplay3: "none"
+        isDisplay3: 'none'
       })
     }
   },
-  //检验联系电话
+  // 检验联系电话
   testTel(e) {
     const phone = e.detail.value
     if (!util.checkPhone(phone)) {
       this.setData({
-        warnMsg: "联系电话格式不正确",
+        warnMsg: '联系电话格式不正确',
         isError: true,
-        isDisplay4: "none"
+        isDisplay4: 'none'
       })
     } else {
       this.setData({
-        isDisplay4: ""
+        isDisplay4: ''
       })
     }
   },
-  //监听日期
+  // 监听日期
   bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
   },
-  //监听性别
+  // 监听性别
   bindGenderChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e, e.detail.value)
     this.setData({
       genderIndex: e.detail.value
     })
   },
-  //检测密码
+  // 检测密码
   testPwd(e) {
     const pwd = e.detail.value
     const effort = util.checkPwd(pwd)
     if (effort == 0) {
       this.setData({
-        warnMsg: "请输入密码",
+        warnMsg: '请输入密码',
         isError: true,
-        isDisplay5: "none"
+        isDisplay5: 'none'
       })
-    } else if (effort == -1) {
+    } 
+    else if (effort == -1) {
       this.setData({
-        warnMsg: "输入密码仅限6位字符",
-        isError: true,
-        isDisplay5: "none"
+        warnMsg: '输入密码仅限6位字符',
+        isDisplay5: 'none',
+        isError: true
       })
-    } else {
+    } 
+    else {
       this.setData({
-        warnMsg: "",
+        warnMsg: '',
         isError: false,
-        isDisplay5: "",
+        isDisplay5: '',
         password: pwd
       })
     }
   },
-  //确认密码
+  // 确认密码
   testAgain(e) {
     const inputPwd = e.detail.value
-    if (inputPwd != this.data.password) {
+    if (this.data.password == '') {
       this.setData({
-        warnMsg: "输入的密码与新密码不一致",
+        warnMsg: '请输入密码',
         isDisplay6: 'none',
         isError: true
       })
-    } else {
+    }else if(inputPwd != this.data.password) {
       this.setData({
+        warnMsg: '前后输入密码不一致',
+        isDisplay6: 'none',
+        isError: true
+      })
+    }else {
+      this.setData({
+        warnMsg: '',
         isDisplay6: '',
         isError: false
       })
     }
   },
   next() {
-    if (this.data.isDisplay1 == ""
-      && this.data.isDisplay2 == ""
-      && this.data.isDisplay3 == ""
-      && this.data.isDisplay4 == "") {
-      //动画效果
-      if (this.data.hidden1 == false) {
-        var animation1 = wx.createAnimation({
-      duration: 800,
-      timingFunction: 'ease',
-    })
-    animation1.opacity(0).step()
-    this.setData({
-      animationData1: animation1.export(),
-    })
-    var animation2 = wx.createAnimation({
-      duration: 800,
-      timingFunction: 'ease',
-    })
-    animation2.opacity(1).step()
-    this.setData({
-      animationData2: animation2.export(),
-    })
-    setTimeout(function () {
+    const FLAG = (this.data.isDisplay1 == '') &&
+                 (this.data.isDisplay2 == '') &&
+                 (this.data.isDisplay3 == '') &&
+                 (this.data.isDisplay4 == '')
+    if (!FLAG) {
       this.setData({
-        hidden1: true,
-        hidden2: false,
-        next_btn: '返回上一级'
+        warnMsg: '请先将信息填写完整',
+        isError: true
       })
-    }.bind(this), 800)
-      } else {
+    } 
+    else {
+        // 动画效果
+        if (this.data.hidden1 == false) {
+          var animation1 = wx.createAnimation({
+          duration: 800,
+          timingFunction: 'ease',
+        })
+        animation1.opacity(0).step()
+        this.setData({
+          animationData1: animation1.export(),
+        })
+        var animation2 = wx.createAnimation({
+          duration: 800,
+          timingFunction: 'ease',
+        })
+        animation2.opacity(1).step()
+        this.setData({
+          animationData2: animation2.export(),
+        })
+        setTimeout(function () {
+          this.setData({
+            hidden1: true,
+            hidden2: false,
+            next_btn: '返回上一级'
+          })
+        }.bind(this), 800)
+      } 
+      else {
         var animation1 = wx.createAnimation({
           duration: 800,
           timingFunction: 'ease',
@@ -198,62 +219,74 @@ Page({
           })
         }.bind(this), 800)
       }
-    } else {
-      this.setData({
-        warnMsg: "请先将信息填写完整",
-        isError: true
-      })
     }
   },
-  //提交表单
+  // 提交表单
   submitRegister(e) {
-    if (this.data.isDisplay1 == "" && this.data.isDisplay2 == "" &&
-      this.data.isDisplay3 == "" && this.data.isDisplay4 == "" &&
-      this.data.isDisplay5 == "" && this.data.isDisplay6 == "") {
-      const data = e.detail.value
-      //封装数据
-      const register = new RegisterData(data)
-      register.gender = this.data.gender[this.data.genderIndex]
-      register.buildingId = this.data.buildingId
-      register.roomId = this.data.roomId
-      this.setData({
-        register
-      })
-      console.log(register)
-      //提交表单并跳转登录页
-      // addHousehold(household).then(res => {
-      //   const result = res.data
-      //   if (result.status == 1) {
-      //     wx.showToast({
-      //       title: '注册成功',
-      //       duration: 2000,
-      //       success: function () {
-      //         setTimeout(function () {
-      //           wx.redirectTo({
-      //             url: 'pages/login/login'
-      //           })
-      //         }, 2000)
-      //       }
-      //     })
-      //   } else {
-      //     common.system.busy()
-      //   }
-      // })
-    } else {
+    const FLAG = (this.data.isDisplay1 == "" && this.data.isDisplay2 == "") &&
+                 (this.data.isDisplay3 == "" && this.data.isDisplay4 == "") &&
+                 (this.data.isDisplay5 == "" && this.data.isDisplay6 == "")
+    if (!FLAG) {
       wx.showModal({
         title: '出错啦',
         content: '请确认输入信息是否正确',
         showCancel: false
       })
+    } else {
+      const data = e.detail.value
+      // 封装数据
+      const register = new RegisterData(data)
+      register.gender = this.data.gender[this.data.genderIndex]
+      register.buildingId = this.data.buildingId
+      register.roomId = this.data.roomId
+      register.account = register.telephone
+      this.setData({
+        register
+      })
+      // 提交表单并跳转登录页
+      resgister(register).then(res => {
+        const result = res.data
+        if (result.status == 200) {
+          wx.showToast({
+            title: '注册成功',
+            duration: 2000,
+            success: function () {
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: '../login/login'
+                })
+              }, 2000)
+            }
+          })
+        }
+        if (result.status == 401) {
+          common.systemPutError()
+        }
+        if (result.status == 500) {
+          common.systemBusy()
+        }
+      })
     }
   },
   onLoad: function (options) {
-    //获取buildingId，roomId
-    console.log("获取到的楼栋id：" + options.buildingId)
-    console.log("获取到的房间id：" + options.roomId)
-    this.setData({
-      buildingId: options.buildingId,
-      roomId: options.roomId
+    // 获取roomId
+    getRoomById(options.roomId).then(res => {
+      const result = res.data
+      console.log(result)
+      if (result.status == 200) {
+        this.setData({
+          buildingId: result.data.buildingId,
+          buildingName: result.data.buildingName,
+          roomNum: result.data.roomNum,
+          roomId: result.data.id
+        })
+      }
+      if (result.status == 401) {
+        common.systemGetError()
+      }
+      if (result.status == 501) {
+        common.systemBusy()
+      }
     })
   }
 })

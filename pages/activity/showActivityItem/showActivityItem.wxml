@@ -1,10 +1,9 @@
 <activity-item title="{{activity.title}}"
                author="{{activity.publisher}}"
                date="{{activity.publishDate}}"
-               imgPath="{{activity.image}}"
                content="{{activity.content}}">
-    <view class="act_info">活动时间：{{activity.address}}</view>
-    <view class="act_info">活动时间：{{activity.date}}</view>
+    <view class="act_info">活动地址：{{activity.address}}</view>
+    <view class="act_info">活动时间：{{activity.startDate}} 至 {{activity.endDate}}</view>
     <!-- 已报名和未报名？ 传值显示？-->
     <button type="primary" 
            bind:tap="toRegister" 

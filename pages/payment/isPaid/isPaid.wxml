@@ -6,7 +6,7 @@
     <pay-box title="已缴费项目" iconPath="/assets/p-i-icon/ok.svg">
         <block wx:for="{{paid}}" wx:key="index">
           <navigator url="/pages/payment/payDetail/payDetail?id={{item.id}}">
-            <pay-box-detail name="{{item.charId}}"></pay-box-detail>
+            <pay-box-detail name="{{item.chargeName}}"></pay-box-detail>
           </navigator>
         </block>
     </pay-box>

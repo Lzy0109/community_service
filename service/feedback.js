@@ -1,5 +1,5 @@
 import request from './network.js'
-
+// 封装Feedback类
 export class Feedback {
   constructor(feedback) {
     this.householdId = feedback.householdId;
@@ -9,7 +9,7 @@ export class Feedback {
     this.reply = "";
   }
 }
-//新增反馈
+// 新增反馈信息
 export function addFeedback(feedback) {
   return request({
     url: '/feedback',
@@ -26,12 +26,11 @@ export function addFeedback(feedback) {
     }
   })
 }
-//获取我的反馈信息
-export function getMyFeedbacks(householdId) {
+// 获取我的反馈信息
+export function getMyFeedbacks(householdId, pageNum, pageSize) {
   return request({
-    url: '/feedback',
-    data: {
-      householdId
-    }
+    url: '/feedback?householdId=' + householdId + 
+          '&pageNum=' + pageNum + 
+          '&pageSize=' + pageSize,
   })
 }

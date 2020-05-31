@@ -2,7 +2,7 @@
   <view class="invite-body">
     <view class="invite-info">
       <image class="info-icon" src="/assets/p-i-icon/home.svg"></image>
-      <text class="invite-room">1栋101房</text>
+      <text class="invite-room">{{buildingName + roomNum}}</text>
       <image class="info-icon" src="/assets/p-i-icon/username.svg"></image>
       <text class="invite-household">{{name}}</text>
     </view>

@@ -1,7 +1,7 @@
 import {
   baseURL
 } from './config.js'
-//封装request
+// 封装request
 export default function(options) {
   return new Promise((resolve, reject) => {
     wx.request({

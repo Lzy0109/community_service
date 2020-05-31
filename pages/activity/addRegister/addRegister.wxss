@@ -1,4 +1,7 @@
 /* pages/activity/addRegister/addRegister.wxss */
+page {
+  background:  white;
+}
 .form-header {
   padding: 96rpx 64rpx;
   text-align: center;
@@ -17,7 +20,8 @@
   padding: 40rpx;
 }
 .form-item {
-  border-bottom: 2rpx solid #f7f7f7;
+  border: 2rpx solid #cecece;
+  border-radius: 20rpx;
   margin-bottom: 40rpx;
   font-size: 34rpx;
   padding: 32rpx 40rpx;
@@ -25,8 +29,9 @@
   align-items: center;
 }
 .form-item-label {
-  padding-right: 32rpx;
+  margin-right: 32rpx;
   width: 170rpx;
+  border-right: 2rpx solid #cecece;
 }
 .form-item-input {
   flex: 1;

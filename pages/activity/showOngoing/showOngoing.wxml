@@ -1,21 +1,39 @@
 <pannel name="正在进行的活动" desc="My Ongoing Activity">
-  <block wx:if="{{OngoingActivities == ''}}">
+  <block wx:if="{{ongoingActivities == ''}}">
     <!-- 无报名活动信息 -->
     <view class="warn">您没有正在进行的活动</view>
   </block>
   <block wx:else>
     <block wx:for="{{ongoingActivities}}" 
             wx:key="index">
-      <activity-detail title="{{item.name}}" 
+      <activity-detail title="{{item.title}}" 
                         bind:detailClick="toActivity" 
-                        data-value="{{item.id}}">
+                        data-value="{{item.act_id}}">
         <view class="nums">
           <image class="icon" src="/assets/p-i-icon/nums.svg"></image>
-          <h4>报名人数：{{item.nums}} 人</h4>
+          <h4>报名人数：{{item.num}} 人</h4>
         </view>
         <view class="date">
           <image class="icon" src="/assets/p-i-icon/date.svg"></image>
-          <h4>活动日期：{{item.date}}</h4>
+          <h4>活动日期：{{item.startDate}} 至 {{item.endDate}}</h4>
+        </view>
+        <view class="status">
+          <image class="icon" src="/assets/p-i-icon/status.svg"></image>
+          <h4 class="text">活动状态：</h4>
+          <block wx:if="{{item.cancel}}">
+            <text style="color: #e64340;">已取消</text>
+            <button class="cancel-btn" 
+                  size="mini" 
+                  disabled>活动已取消</button>
+          </block>
+          <block wx:else>
+            <text style="color: #09BB07;">正在进行</text>
+            <button class="cancel-btn" 
+                  size="mini" 
+                  hover-stop-propagation="true"
+                  catch:tap="cancelClick"
+                  data-value="{{item.id}}">取消预约</button>
+          </block>
         </view>
       </activity-detail>
     </block>

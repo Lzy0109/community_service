@@ -1,16 +1,16 @@
 <view class="pay-header">
-  <h2 class="pay-title">{{pay_title}}</h2>
+  <h2 class="pay-title">{{payment.chargeName}}</h2>
   <view class="pay-tips">智能社区</view>
-  <view class="pay-price">￥{{pay_standard}}</view>
+  <view class="pay-price">￥{{payment.charStandard}}</view>
 </view>
 <view class="pay-desc">
   <view class="desc-item">
     <text>支付人</text>
-    <view class="item-detail">{{pay_household}}</view>
+    <view class="item-detail">{{payment.householdName}}</view>
   </view>
   <view class="desc-item">
     <text>扣费项目描述</text>
-    <view class="item-detail">缴费项目描述</view>
+    <view class="item-detail">{{payment.description}}</view>
   </view>
   <view class="desc-item">
     <text>扣费方式</text>

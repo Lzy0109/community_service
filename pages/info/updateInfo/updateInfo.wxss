@@ -2,17 +2,25 @@
 .default {
   color: grey;
 }
+.item-input {
+  width: 550rpx;
+}
 .item-text {
   font-weight: 700;
   font-size: 34rpx;
   margin-right: 28rpx;
 }
 .item-input input{
-  width: 500rpx;
-  border: 2rpx solid #5c5a5a2f;
+  width: 540rpx;
+  border: 2rpx solid #cecece;
   border-radius: 10rpx;
   padding: 12rpx;
 }
 .submit {
   margin: 40rpx;
+}
+.t {
+  position: absolute;
+  top: 50rpx;
+  right: 466rpx;
 }

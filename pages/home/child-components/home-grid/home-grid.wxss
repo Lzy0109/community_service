@@ -13,7 +13,7 @@
   display: inline-block;
   line-height: 50rpx;
 }
-.grid-title-icon  image{
+.grid-title-icon-img {
   width: 100%;
   height: 100%;
 }

@@ -19,12 +19,18 @@ Page({
     getHouseholdById(hh_id).then(res => {
       const result = res.data
       console.log(result)
-      if(result.status == 1) {
+      if (result.status == 200) {
+        const household = result.data
+        household.arrivalDate = household.arrivalDate.split('T')[0]
         this.setData({
-          household: result.data
+          household: household
         })
-      }else {
-        common.system.busy()
+      }
+      if (result.status == 401) {
+        common.systemGetError()
+      }
+      if (result.status == 500) {
+        common.systemBusy()
       }
     })
   }

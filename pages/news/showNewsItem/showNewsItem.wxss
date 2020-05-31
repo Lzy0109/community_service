@@ -1,1 +1,4 @@
 /* pages/news/showNewsItem/showNewsItem.wxss */
+page {
+  background:  white;
+}

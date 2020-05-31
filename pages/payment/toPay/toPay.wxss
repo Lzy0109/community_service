@@ -1,3 +1,6 @@
+page {
+  background: white;
+}
 .pay-header {
   padding: 96rpx 64rpx;
   text-align: center;

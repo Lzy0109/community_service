@@ -39,7 +39,7 @@ page {
   padding-top: 6rpx;
   margin-right: 32rpx;
   width: 100rpx;
-  border-right: 2rpx solid rgba(128, 128, 128, 0.589);
+  border-right: 2rpx solid #cecece;
 }
 .form-item-icon image {
   width: 40rpx;

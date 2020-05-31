@@ -8,6 +8,7 @@
   box-sizing: border-box;
   border: 2rpx solid #d9d9d1;
   border-radius: 10rpx;
+  background-color: white;
 }
 /* .grid-item-hover {
   background-color: rgb(167, 198, 230);
@@ -17,7 +18,7 @@
   height: 200rpx;
   margin: 0 auto;
 }
-.grid-item-icon image{
+.grid-item-icon-img{
   width: 100%;
   height: 100%;
 }

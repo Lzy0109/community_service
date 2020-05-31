@@ -1,6 +1,6 @@
 <view class="pannel-box" bind:tap="itemClick">
   <view class="pannel-box-img">
-    <image src="{{imgPath}}" mode="aspectFit"></image>
+    <image class="pannel-box-img-image" src="{{imgPath}}" mode="aspectFit"></image>
   </view>
   <view class="pannel-box-text">
     <h4 class="pannel-box-title">{{title}}</h4>

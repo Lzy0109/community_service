@@ -19,10 +19,10 @@
     <text class="item-text">入住日期</text>{{household.arrivalDate}}
   </info-item>
   <info-item iconPath="/assets/p-i-icon/building.svg">
-    <text class="item-text">楼栋</text>{{household.buildingId}}
+    <text class="item-text">楼栋</text>{{household.buildingName}}
   </info-item>
   <info-item iconPath="/assets/p-i-icon/room.svg">
-    <text class="item-text">房间号</text>{{household.roomId}}
+    <text class="item-text">房间号</text>{{household.roomNum}}
   </info-item>
   <button type="primary" bind:tap="toUpdateInfo">修改信息</button>
   <info-footer text="智能社区服务平台"/>

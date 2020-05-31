@@ -20,9 +20,6 @@
   text-align: left;
   font-size: 28rpx;
 }
-.item-img {
-  padding: 60rpx;
-}
 .item-body {
   padding: 60rpx;
   margin-bottom: 60rpx;

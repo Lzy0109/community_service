@@ -1,26 +1,24 @@
 var app = getApp()
 var common = require('../../service/common.js')
+var md5 = require('../../utils/md5.js')
 import {
   wxLogin,
   cmLogin
 } from '../../service/login.js'
-import {
-  getHouseholdById
-} from '../../service/info.js'
 Page({
   data: {
     animationData1: {},
     animationData2: {},
     hidden1: false,
     hidden2: true,
-    warnMsg: "",
+    warnMsg: '',
     isError: false
   },
-  //获取openid去数据库查找是否有该绑定微信的用户
+  // 获取openid去数据库查找是否有该绑定微信的用户
   wx_login() {
     wxLogin()
   },
-  //社区账号登录 添加动画 多创建一个动画对象来实现来回切换(官方bug)
+  // 社区账号登录 添加动画 多创建一个动画对象来实现来回切换(官方bug)
   cm_login() {
     var animation1 = wx.createAnimation({
       duration: 800,
@@ -45,7 +43,7 @@ Page({
       })
     }.bind(this), 800)
   },
-  //返回上一级 添加动画
+  // 返回上一级 添加动画
   return_back() {
     var animation1 = wx.createAnimation({
       duration: 800,
@@ -70,7 +68,7 @@ Page({
       })
     }.bind(this), 800)
   },
-  //忘记密码
+  // 忘记密码
   forget() {
     wx.showModal({
       title: 'Tips',
@@ -80,34 +78,38 @@ Page({
   },
   cmlogin_submit(e) {
     const login_data = e.detail.value
-    //获取输入的username和password
-    const login_account = login_data.account
-    const login_password = login_data.password
-    //发送网络请求
-    cmLogin(login_account,login_password).then(res => {
+    // 获取输入的username和password
+    const loginAccount = login_data.account
+    const loginPassword = login_data.password
+    console.log("加密：" + md5.hexMD5(loginPassword))
+    // 发送网络请求
+    cmLogin(loginAccount, loginPassword).then(res => {
       const result = res.data
       console.log(result)
-      if(result.status == 1){
-        //登录成功 将住户id存入全局数据
+      if (result.status == 200) {
+        // 登录成功 将住户id存入全局数据
         app.globalData.hh_id = result.data
         wx.showToast({
           title: '登录成功',
-          success: function () {
-            setTimeout(function () {
-              wx.switchTab({
-                url: '/pages/home/home',
-              })
-            }, 1000)
-          }
         })
-      }else if(result.status == 0) {
+        setTimeout(function () {
+          wx.switchTab({
+            url: '/pages/home/home',
+          })
+        }, 1000)
+        wx.hideToast({
+          complete: (res) => {},
+        })
+      }
+      if (result.status == 401) {
         this.setData({
-          //账号密码错提示
+          // 账号密码错提示
           warnMsg: "账号或密码错误",
           isError: true
         })
-      }else {
-        common.system_busy()
+      }
+      if (result.status == 500) {
+        common.systemBusy()
       }
     })
   }

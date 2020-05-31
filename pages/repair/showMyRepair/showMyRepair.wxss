@@ -1,13 +1,12 @@
 /* pages/repair/showMyRepair/showMyRepair.wxss */
 .warn {
-  padding-left: 80rpx;
+  text-align: center;
   padding-bottom: 10rpx;
   font-weight: 700;
   font-size: 40rpx; 
 }
 .content {
   padding: 32rpx 32rpx 24rpx;
-  letter-spacing: 1px;
 }
 .date {
   padding: 20rpx 32rpx 24rpx;

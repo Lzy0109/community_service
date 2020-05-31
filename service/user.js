@@ -1,5 +1,5 @@
 import request from './network.js'
-
+// 封装RegisterData类
 export class RegisterData {
   constructor(data){
     this.name = data.name;
@@ -8,14 +8,14 @@ export class RegisterData {
     this.telephone = data.telephone;
     this.IDcard = data.IDcard;
     this.arrivalDate = data.arrivalDate;
-    this.isOwner = 0,
+    this.isOwner = 0;
     this.buildingId = data.buildingId;
     this.roomId = data.roomId;
     this.password = data.password
   }
 }
 
-//绑定微信
+// 绑定微信
 export function bindWx(hh_id) {
   wx.login({
     success: res => {
@@ -67,14 +67,14 @@ export function bindWx(hh_id) {
     }
   })
 }
-//查询是否绑定
+// 查询是否绑定
 export function isBind(hh_id) {
   return new request({
     url: '/isBind/' + hh_id
   })
 }
-//验证旧密码
-export function testOldPwd(hh_id,password) {
+// 验证旧密码
+export function testOldPwd(hh_id, password) {
   return request({
     url: '',
     method: 'POST',
@@ -86,8 +86,8 @@ export function testOldPwd(hh_id,password) {
     }
   })
 }
-//修改密码
-export function updatePwd(hh_id,password) {
+// 修改密码
+export function updatePwd(hh_id, password) {
   return request({
     url: '',
     header: {
@@ -98,16 +98,26 @@ export function updatePwd(hh_id,password) {
     }
   })
 }
-//注册
+// 注册
 export function resgister(registerData) {
   return request({
-    url: '',
+    url: '/household',
     method: 'POST',
     header: {
       'content-type': 'application/x-www-form-urlencoded'
     },
     data: {
-      
+      name: registerData.name,
+      account: registerData.account,
+      gender: registerData.gender,
+      age: registerData.age,
+      telephone: registerData.telephone,
+      IDcard: registerData.IDcard,
+      arrivalDate: registerData.arrivalDate,
+      isOwner: 0,
+      buildingId: registerData.buildingId,
+      roomId: registerData.roomId,
+      password: registerData.password
     }
   })
 }

@@ -1,6 +1,6 @@
 <view class="detail-pannel" bind:tap="detailClick">
   <view class="detail-header">
-    <image class="detail-icon" src="/assets/p-i-icon/info.svg"></image>
+    <image class="detail-icon" src="/assets/p-i-icon/info.svg"/>
     {{title}}
   </view>
   <view class="detail-body">

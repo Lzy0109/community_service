@@ -1,20 +1,15 @@
 /* pages/register/child-components/form-item/form-item.wxss */
 .form-item {
-  border-bottom: 2rpx solid #f7f7f7;
+  border: 2rpx solid #cecece;
+  border-radius: 20rpx;
   margin-bottom: 40rpx;
-  font-size: 34rpx;
-  padding: 32rpx 40rpx;
+  font-size: 30rpx;
+  padding: 32rpx 30rpx;
   display: flex;
   align-items: center;
 }
 .form-item-label {
-  width: 170rpx;
-}
-.input-tick {
-  width: 40rpx;
-  height: 40rpx;
-}
-.input-tick image{
-  width: 100%;
-  height: 100%;
+  width: 150rpx;
+  margin-right: 20rpx;
+  border-right: 2rpx solid #cecece;
 }

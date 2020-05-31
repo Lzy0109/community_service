@@ -2,7 +2,7 @@
 <view class="grid">
   <view class="grid-title">
     <view class="grid-title-icon">
-      <image src="/assets/grid/dot.svg"></image>
+      <image class="grid-title-icon-img" src="/assets/grid/dot.svg"></image>
     </view>
     <text class="grid-title-label">服务</text>
   </view>

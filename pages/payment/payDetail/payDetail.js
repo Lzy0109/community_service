@@ -6,26 +6,24 @@ import {
 } from '../../../service/payment.js'
 Page({
   data: {
-    pay_title: '缴费项目名称',
-    pay_standard: '200.0',
-    pay_household: '支付人姓名',
-    pay_datetime: '2020-10-20',
-    pay_status: 1,
-    pay_desc: 'desc',
     payment: {}
   },
   onLoad: function (options) {
     const pay_id = options.id
-    const hh_id = app.globalData.hh_id
-    //加载具体缴费项目信息
-    getPaymentById(hh_id,pay_id).then(res => {
+    // 加载具体缴费项目信息
+    getPaymentById(pay_id).then(res => {
       const result = res.data
-      if(result.status == 1) {
+      console.log(result)
+      if (result.status == 200) {
         this.setData({
           payment: result.data
         })
-      }else {
-        common.system_busy()
+      }
+      if (result.status == 401) {
+        common.systemError()
+      }
+      if (result.status == 500) {
+        common.systemBusy()
       }
     })
   }

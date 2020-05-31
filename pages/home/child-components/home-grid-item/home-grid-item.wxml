@@ -1,7 +1,7 @@
 <!--pages/home/child-components/home-grid-item/home-grid-item.wxml-->
 <view class="grid-item" bind:tap="itemClick">
     <view class="grid-item-icon">
-      <image src="{{imgPath}}"></image>
+      <image class="grid-item-icon-img" src="{{imgPath}}"></image>
     </view>
     <text class="grid-item-label">{{name}}</text>
 </view>

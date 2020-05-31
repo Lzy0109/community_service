@@ -14,7 +14,7 @@
   line-height: 120rpx;
   text-align: center;
 }
-.pannel-box-img image {
+.pannel-box-img-image {
   width: 100%;
   height: 100%;
 }

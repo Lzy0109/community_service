@@ -1,63 +1,51 @@
 import request from './network.js'
-
-export class Activity {
-  constructor(activity) {
-    this.id = activity.id;
-    this.image = activity.id;
-    this.title = activity.title;
-    this.content = activity.content;
-    this.address = activity.address;
-    this.number = activity.number;
-    this.date = activity.date;
-    this.publisher = activity.publisher;
-    this.publishDate = activity.publishDate;
-  }
-}
-
+// 封装Register类
 export class Register {
   constructor(register) {
     this.act_id = register.act_id;
     this.hh_id = register.hh_id;
     this.telephone = register.telephone;
-    this.nums = register.nums;
+    this.num = register.num;
   }
 }
-//分页获取
-export function getActivities() {
+// 分页获取
+export function getActivities(pageNum, pageSize) {
   return request({
-    //获取所有activity的url
-    url: '/activity'
+    url: '/activity?pageNum=' + pageNum + '&pageSize=' + pageSize
   })
 }
-//根据id获取
-export function getActivityById(id) {
+// 根据id获取
+export function getActivityById(id, hh_id) {
   return request({
-    url: '/activity/' + id,
+    url: '/household/activity/' + id + '?hh_id=' + hh_id,
   })
 }
-//根据住户id获取参加、已过期的活动
-export function getMyClosedActivities(househld_id, date) {
+// 根据住户id获取参加、已过期的活动
+export function getMyClosedActivities(hh_id, pageNum, pageSize) {
   return request({
-    url: ''
+    url: '/household/activity/overdue',
+    data: {
+      hh_id,
+      pageNum,
+      pageSize
+    }
   })
 }
-//根据住户id获取参加、正在进行的活动
-export function getMyOngoingActivities(househld_id, date) {
+// 根据住户id获取参加、正在进行的活动
+export function getMyOngoingActivities(hh_id, pageNum, pageSize) {
   return request({
-    url: ''
+    url: '/household/activity/underway',
+    data: {
+      hh_id,
+      pageNum,
+      pageSize
+    }
   })
 }
-//是否报名
-export function isRegister(hh_id,act_id) {
-  return request({
-    url: ''
-  })
-}
-
-//提交报名
+// 提交报名
 export function addRegister(register) {
   return request({
-    url: '',
+    url: '/activityRegister',
     method: 'POST',
     header: {
       'content-type': 'application/x-www-form-urlencoded'
@@ -66,7 +54,20 @@ export function addRegister(register) {
       act_id: register.act_id,
       hh_id: register.hh_id,
       telephone: register.telephone,
-      nums: register.nums
+      num: register.num
+    }
+  })
+}
+// 取消活动预约
+export function deleteRegister(id) {
+  return request({
+    url: '/activityRegister/' + id,
+    method: 'POST',
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      _method: 'DELETE'
     }
   })
 }

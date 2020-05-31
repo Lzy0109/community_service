@@ -1,5 +1,4 @@
 //app.js
-var common = require('/service/common.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力

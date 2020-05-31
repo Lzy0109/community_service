@@ -1,6 +1,13 @@
 /* pages/activity/showActivityItem/showActivityItem.wxss */
+page {
+  background:  white;
+}
 .act_info {
   font-size: 28rpx;
   color: grey;
   margin-bottom: 40rpx;
+}
+rich-text .rich-img {
+  width: 100% ;
+  height: auto ;
 }

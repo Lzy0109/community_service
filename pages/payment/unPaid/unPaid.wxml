@@ -5,7 +5,7 @@
   <block wx:else>
     <pay-box title="未缴费项目" iconPath="/assets/p-i-icon/warn.svg">
       <block wx:for="{{unpaid}}" wx:key="index">
-        <pay-box-detail name="{{item.id}}"
+        <pay-box-detail name="{{item.chargeName}}"
                         data-value="{{item.id}}"
                         bind:itemClick="openDialog">
         </pay-box-detail>

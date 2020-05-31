@@ -8,8 +8,9 @@
   align-items: center;
 }
 .update-box-label {
-  padding-right: 32rpx;
+  margin-right: 32rpx;
   width: 170rpx;
+  border-right: 2rpx solid #cecece;
 }
 .update-box-input {
   flex: 1;

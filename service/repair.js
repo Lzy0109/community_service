@@ -1,5 +1,5 @@
 import request from './network.js'
-
+// 封装Repair类
 export class Repair {
   constructor(repair) {
     this.householdId = repair.householdId;
@@ -11,7 +11,7 @@ export class Repair {
     this.reply = "";
   }
 }
-//新增报修
+// 新增报修信息
 export function addRepair(repair) {
   return request({
     url: '/repair',
@@ -30,12 +30,11 @@ export function addRepair(repair) {
     }
   })
 }
-//获取住户报修
-export function getMyRepairs(householdId) {
+// 获取住户报修信息
+export function getMyRepairs(householdId, pageNum, pageSize) {
   return request({
-    url: '/repair',
-    data: {
-      householdId
-    }
+    url: '/repair?householdId=' + householdId + 
+          '&pageNum=' + pageNum + 
+          '&pageSize=' + pageSize,
   })
 }

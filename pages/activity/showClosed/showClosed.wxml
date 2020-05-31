@@ -6,16 +6,16 @@
   <block wx:else>
     <block wx:for="{{closedActivities}}" 
             wx:key="index">
-      <activity-detail title="{{item.name}}" 
+      <activity-detail title="{{item.title}}" 
                         bind:detailClick="toActivity" 
-                        data-value="{{item.id}}">
+                        data-value="{{item.act_id}}">
         <view class="nums">
           <image class="icon" src="/assets/p-i-icon/nums.svg"></image>
-          <h4>报名人数：{{item.nums}} 人</h4>
+          <h4>报名人数：{{item.num}} 人</h4>
         </view>
         <view class="date">
           <image class="icon" src="/assets/p-i-icon/date.svg"></image>
-          <h4>活动日期：{{item.date}}</h4>
+          <h4>活动日期：{{item.startDate}}-{{item.endDate}}</h4>
         </view>
       </activity-detail>
     </block>

@@ -3,19 +3,11 @@
   <view class="item-author">发布人：{{author}}</view>
   <view class="item-date">发布日期：{{date}}</view>
 </view>
-<view class="item-img">
-    <image src="{{imgPath}}" mode="widthFix"></image>
-</view>
 <view class="item-body">
   <view class="item-content">
-    <!-- <text class="item-content-text" space="emsp">{{content}}</text> -->
-    <rich-text nodes="{{content}}"></rich-text>
+    <rich-text nodes="{{content}}" class="rich-text-content"></rich-text>
   </view>
 </view>
-<!-- 多张图片 需要传图片数组显示 -->
-<!-- <view class="item-img">
-    <image src="{{imgPath}}" mode="widthFix"></image>
-</view> -->
 <view class="item-footer">
   <slot/>
 </view>

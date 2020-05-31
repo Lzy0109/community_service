@@ -10,7 +10,7 @@
   height: 40rpx;
   margin-right: 22rpx;
 }
-.detail-l-icon image {
+.detail-l-icon-img {
   width: 100%;
   height: 100%;
 }
@@ -24,7 +24,7 @@
   width: 50rpx;
   height: 50rpx;
 }
-.detail-r-icon image {
+.detail-r-icon-img {
   width: 100%;
   height: 100%;
 }

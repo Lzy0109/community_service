@@ -8,41 +8,41 @@ import {
 } from '../../../service/feedback.js'
 Page({
   data: {
+    content_input: 0,
     feedbackContent: '',
-    warnMsg: "请输入反馈内容",
+    warnMsg: '',
     isError: false,
   },
-  //反馈内容字数限制
+  // 反馈内容字数限制
   inputContent(e) {
     const value = e.detail.value
     const len = parseInt(value.length)
     if (len > 100) {
       return;
-    }else {
+    } else {
       this.setData({
+        content_input: len,
         feedbackContent: value
       })
     }
   },
-  //提交表单
   addFeedback(e) {
-    //提交表单时需要验证反馈内容是否为空，空则不可提交
-    if(this.data.feedbackContent == ""){
+    // 提交表单时需要验证反馈内容是否为空，空则不可提交
+    if (this.data.content_input == 0) {
       this.setData({
+        warnMsg: "请输入反馈内容",
         isError: true
       })
-    }else{
+    } else {
       const data = e.detail.value
       const feedback = new Feedback(data)
-      //需要获取提交时间和业主
+      // 获取提交时间和业主id
       feedback.date = util.formatTime(new Date()).split(' ')[0]
       feedback.householdId = app.globalData.hh_id
-      console.log(feedback)
-      //提交网络请求
       addFeedback(feedback).then(res => {
         const result = res.data
         console.log(result)
-        if (result.status == 1) {
+        if (result.status == 200) {
           wx.showToast({
             title: '提交成功',
             duration: 2000,
@@ -54,8 +54,12 @@ Page({
               }, 2000)
             }
           })
-        }else {
-          common.system_busy()
+        } 
+        if(result.status == 401) {
+          common.systemPutError()
+        }
+        if(result.status == 500) {
+          common.systemBusy()
         }
       })
     }

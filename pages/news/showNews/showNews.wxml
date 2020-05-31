@@ -4,7 +4,8 @@
   </block>
   <block wx:else>
     <block wx:for="{{news}}" wx:key="index">
-      <navigator url="/pages/news/showNewsItem/showNewsItem?id={{item.id}}">
+      <navigator url="/pages/news/showNewsItem/showNewsItem?id={{item.id}}"
+      animation="{{animationData}}">
         <pannel-box title="{{item.title}}"
                   imgPath="{{item.image}}">
         </pannel-box>

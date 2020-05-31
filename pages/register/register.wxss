@@ -1,4 +1,10 @@
 /* pages/register/register.wxss */
+page {
+  background: white;
+}
+.default {
+  color: grey;
+}
 .form-header {
   padding: 96rpx 64rpx;
   text-align: center;

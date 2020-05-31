@@ -1,6 +1,6 @@
 /* pages/feedback/showMyFeedback/showMyFeedback.wxss */
 .warn {
-  padding-left: 80rpx;
+  text-align: center;
   padding-bottom: 10rpx;
   font-weight: 700;
   font-size: 40rpx; 
