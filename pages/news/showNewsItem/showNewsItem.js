@@ -14,7 +14,7 @@ Page({
       console.log(result)
       if (result.status == 200) {
         const news = result.data
-        news.content = news.content.replace('< img ', '<img style="max-width:100%;height:auto"')
+        news.content = news.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto"')
         this.setData({
           news
         })

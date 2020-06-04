@@ -24,7 +24,7 @@ Page({
       console.log(result)
       if (result.status == 200) {
         const activity = res.data.data
-        activity.content = activity.content.replace('< img ', '<img style="max-width:100%;height:auto"')
+        activity.content = activity.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto"')
         this.setData({
           activity,
         })
