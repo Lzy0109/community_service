@@ -22,12 +22,6 @@ Page({
     getActivityById(id, hh_id).then(res => {
       const result = res.data
       console.log(result)
-      if (result.status == 501) {
-        common.systemBusy()
-      }
-      if (result.status == 401) {
-        common.systemGetError()
-      }
       if (result.status == 200) {
         const activity = res.data.data
         activity.content = activity.content.replace('< img ', '<img style="max-width:100%;height:auto"')
@@ -54,6 +48,8 @@ Page({
             btn_disabled: true
           })
         }
+      } else {
+        common.errorStatus(result)
       }
     })
   }

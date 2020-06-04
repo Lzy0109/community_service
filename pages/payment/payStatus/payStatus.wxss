@@ -1,0 +1,23 @@
+/* pages/payment/paySuccess/paySuccess.wxss */
+.result_contain {
+  margin: 250rpx auto;
+}
+.result_img {
+  text-align: center;
+}
+.result_content {
+  text-align: center;
+  font-size: 48rpx;
+  font-weight: 700;
+  padding: 48rpx;
+}
+.result_to_order {
+  display: block;
+  background-color: #69C3AA;
+  color: #FFF;
+  border-radius: 6rpx;
+  width: 50%;
+  text-align: center;
+  margin: 40rpx auto;
+  padding: 20rpx;
+}

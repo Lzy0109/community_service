@@ -14,15 +14,12 @@ Page({
       console.log(result)
       if (result.status == 200) {
         const news = result.data
+        news.content = news.content.replace('< img ', '<img style="max-width:100%;height:auto"')
         this.setData({
           news
         })
-      }
-      if (result.status == 401) {
-        common.systemGetError()
-      }
-      if (result.status == 500) {
-        common.systemBusy()
+      } else {
+        common.errorStatus(result)
       }
     })
   }

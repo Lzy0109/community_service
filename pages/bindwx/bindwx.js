@@ -37,7 +37,7 @@ Page({
         })
       }
       if (result.status == 500) {
-        common.systemBusy()
+        common.errorStatus(result)
       }
     })
   }

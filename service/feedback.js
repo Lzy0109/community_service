@@ -15,7 +15,7 @@ export function addFeedback(feedback) {
     url: '/feedback',
     method: 'POST',
     header: {
-      'content-type': 'application/x-www-form-urlencoded'
+      'content-type': 'application/x-www-form-urlencoded',
     },
     data: {
       householdId: feedback.householdId,

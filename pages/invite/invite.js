@@ -26,12 +26,8 @@ Page({
         this.setData({
           access_token: result.data.access_token
         })
-      }
-      if (result.status == 401) {
-        common.systemGetError()
-      }
-      if (result.status == 500) {
-        common.systemBusy()
+      } else {
+        common.errorStatus(result)
       }
       wx.request({
         url: 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token='
@@ -69,12 +65,8 @@ Page({
           roomId: result.data.roomId,
           roomNum: result.data.roomNum
         })
-      }
-      if (result.status == 401) {
-        common.systemGetError()
-      }
-      if (result.status == 500) {
-        common.systemBusy()
+      } else {
+        common.errorStatus(result)
       }
     })   
   }

@@ -1,6 +1,7 @@
 // pages/register/register.js
 var util = require('../../utils/util.js')
 var common = require('../../service/common.js')
+var SHA_256 = require('../../utils/SHA256.js')
 import {
   getRoomById
 } from '../../service/room.js'
@@ -240,6 +241,8 @@ Page({
       register.buildingId = this.data.buildingId
       register.roomId = this.data.roomId
       register.account = register.telephone
+      // 密码加密
+      register.password = SHA_256.sha256_digest(register.password)
       this.setData({
         register
       })
@@ -258,12 +261,8 @@ Page({
               }, 2000)
             }
           })
-        }
-        if (result.status == 401) {
-          common.systemPutError()
-        }
-        if (result.status == 500) {
-          common.systemBusy()
+        } else {
+          common.errorStatus(result)
         }
       })
     }
@@ -280,12 +279,8 @@ Page({
           roomNum: result.data.roomNum,
           roomId: result.data.id
         })
-      }
-      if (result.status == 401) {
-        common.systemGetError()
-      }
-      if (result.status == 501) {
-        common.systemBusy()
+      } else {
+        common.errorStatus(result)
       }
     })
   }

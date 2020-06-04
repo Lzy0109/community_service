@@ -21,7 +21,7 @@
         <view class="form-item-input">
           <input type="text" 
                  placeholder="Username" 
-                 name="account"           
+                 name="username"           
                  confirm-type="next"></input>
         </view>
       </view>
@@ -41,5 +41,4 @@
       <button bind:tap="return_back" type="primary">返回上一级</button>
     </form>
   </view>
-  <!-- <text class="visitor" bind:tap="visitor_login">游客登录</text> -->
 </view>

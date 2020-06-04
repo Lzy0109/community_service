@@ -10,7 +10,7 @@
   </view>
   <view class="desc-item">
     <text>缴费项目描述</text>
-    <view class="item-detail">{{payment.chargeName}}</view>
+    <view class="item-detail">{{payment.description}}</view>
   </view>
   <view class="desc-item">
     <text>缴费时间</text>

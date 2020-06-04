@@ -54,12 +54,8 @@ Page({
               }, 2000)
             }
           })
-        } 
-        if(result.status == 401) {
-          common.systemPutError()
-        }
-        if(result.status == 500) {
-          common.systemBusy()
+        } else {
+          common.errorStatus(result)
         }
       })
     }

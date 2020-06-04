@@ -1,6 +1,7 @@
 var app = getApp()
 var common = require('../../service/common.js')
 var md5 = require('../../utils/md5.js')
+var SHA_256 = require('../../utils/SHA256.js')
 import {
   wxLogin,
   cmLogin
@@ -77,18 +78,18 @@ Page({
     })
   },
   cmlogin_submit(e) {
-    const login_data = e.detail.value
+    const login = e.detail.value
     // 获取输入的username和password
-    const loginAccount = login_data.account
-    const loginPassword = login_data.password
-    console.log("加密：" + md5.hexMD5(loginPassword))
+    const username = login.username
+    const password = SHA_256.sha256_digest(login.password)
     // 发送网络请求
-    cmLogin(loginAccount, loginPassword).then(res => {
+    cmLogin(username, password).then(res => {
       const result = res.data
       console.log(result)
       if (result.status == 200) {
         // 登录成功 将住户id存入全局数据
-        app.globalData.hh_id = result.data
+        app.globalData.hh_id = result.data.id
+        app.globalData.token = result.data.token
         wx.showToast({
           title: '登录成功',
         })
@@ -97,19 +98,8 @@ Page({
             url: '/pages/home/home',
           })
         }, 1000)
-        wx.hideToast({
-          complete: (res) => {},
-        })
-      }
-      if (result.status == 401) {
-        this.setData({
-          // 账号密码错提示
-          warnMsg: "账号或密码错误",
-          isError: true
-        })
-      }
-      if (result.status == 500) {
-        common.systemBusy()
+      } else {
+        common.errorStatus(result)
       }
     })
   }

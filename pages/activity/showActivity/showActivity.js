@@ -21,7 +21,7 @@ Page({
           activities,
         })
       } else {
-        common.systemBusy()
+        common.errorStatus(result)
       }
     })
   },
@@ -55,7 +55,7 @@ Page({
           })
         }
       } else {
-        common.systemBusy()
+        common.errorStatus(result)
       }
     })
   }

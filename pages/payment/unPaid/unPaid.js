@@ -66,7 +66,7 @@ Page({
           unpaid: result.data
         })
       } else {
-        common.systemBusy()
+        common.errorStatus(result)
       }
     })
   }

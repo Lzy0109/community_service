@@ -2,6 +2,7 @@
 var util = require('../../../utils/util.js')
 var app = getApp()
 var common = require('../../../service/common.js')
+var SHA_256 = require('../../../utils/SHA256.js')
 import {
   updatePwd
 } from '../../../service/user.js'
@@ -66,7 +67,8 @@ Page({
       console.log("完成验证，可以提交")
       // 发送网络请求
       const hh_id = app.globalData.hh_id
-      const password = this.data.newPwd
+      // 密码加密
+      const password = SHA_256.sha256_digest(this.data.newPwd)
       updatePwd(hh_id, password).then(res => {
         const result = res.data
         if (result.status == 200) {
@@ -80,12 +82,8 @@ Page({
               }, 2000)
             }
           })
-        }
-        if (result.status == 401) {
-          common.systemPutError()
-        }
-        if (result.status == 500) {
-          common.systemBusy()
+        } else {
+          common.errorStatus(result)
         }
       })
     }

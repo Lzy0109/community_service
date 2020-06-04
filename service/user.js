@@ -1,4 +1,5 @@
 import request from './network.js'
+var app = getApp()
 // 封装RegisterData类
 export class RegisterData {
   constructor(data){
@@ -25,18 +26,16 @@ export function bindWx(hh_id) {
           url: 'http://localhost:8080/bindWx',
           method: 'POST',
           header: {
-            'content-type': 'application/x-www-form-urlencoded'
+            'content-type': 'application/x-www-form-urlencoded',
+            'Authorization': app.globalData.token
           },
           data: {
             code: res.code,
             id: hh_id
           },
-          header: {
-            'content-type': 'application/x-www-form-urlencoded'
-          },
           success: res => {
             const effort = res.data.data
-            console.log(res)
+            console.log(res.data)
             if (effort == 1) {
               wx.showToast({
                 title: '绑定成功',

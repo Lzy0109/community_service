@@ -1,0 +1,7 @@
+<view class="result_contain">
+  <view class="result_img">
+    <icon type="{{resultType}}" size="72"></icon>
+  </view>
+  <view class="result_content">{{resultContent}}</view>
+  <button type="primary" bind:tap="returnClick">返回上一页</button>
+</view>

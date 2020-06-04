@@ -4,13 +4,15 @@ var common = require('../../service/common.js')
 import {
   getHouseholdById
 } from '../../service/info.js'
+import { errorStatus } from '../../service/common.js'
 Page({
   data: {
     household: {}
   },
   loginout() {
     // 退出登录 清空全局数据
-    app.globalData.hh_id = ""
+    app.globalData.hh_id = '',
+    app.globalData.token = '',
     wx.redirectTo({
       url: '/pages/login/login',
     })
@@ -24,12 +26,8 @@ Page({
         this.setData({
           household: result.data
         })
-      }
-      if (result.status == 401) {
-        common.systemGetError()
-      }
-      if (result.status == 500) {
-        common.system_busy()
+      } else {
+        errorStatus(result)
       }
     })
   }

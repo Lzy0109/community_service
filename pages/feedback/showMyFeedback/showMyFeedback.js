@@ -41,7 +41,7 @@ Page({
           feedbacks: result.data.items
         })
       } else {
-        common.systemBusy()
+        common.errorStatus(result)
       }
     })
   },
@@ -76,7 +76,7 @@ Page({
           })
         }
       } else {
-        common.systemBusy()
+        common.errorStatus(result)
       }
     })
   }

@@ -1,6 +1,6 @@
 // pages/info/showInfo/showInfo.js
 var app = getApp()
-var common = require('../../../service/info.js')
+var common = require('../../../service/common.js')
 import {
   getHouseholdById
 } from '../../../service/info.js'
@@ -25,12 +25,8 @@ Page({
         this.setData({
           household: household
         })
-      }
-      if (result.status == 401) {
-        common.systemGetError()
-      }
-      if (result.status == 500) {
-        common.systemBusy()
+      } else {
+        common.errorStatus(result)
       }
     })
   }

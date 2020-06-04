@@ -98,7 +98,7 @@ Page({
           })
         }
       } else {
-        common.systemBusy()
+        common.errorStatus(result)
       }
     })
   }

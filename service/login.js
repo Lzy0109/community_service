@@ -20,30 +20,28 @@ export function wxLogin() {
             const result = res.data
             console.log(result)
             if (result.status == 200) {
-              const hh_id = result.data
               //存在该用户 将用户hh_id存入全局
-              app.globalData.hh_id = hh_id
+              app.globalData.hh_id = result.data.id
+              app.globalData.token = result.data.token
               wx.showToast({
                 title: '登录成功',
-                success: function () {
-                  setTimeout(function () {
-                    wx.switchTab({
-                      url: '/pages/home/home',
-                    })
-                  }, 1000)
-                }
               })
+              setTimeout(function () {
+                wx.switchTab({
+                  url: '/pages/home/home',
+                })
+              }, 1000)
             }
             if (result.status == 401) {
               //该用户没有绑定微信 登录失败
               wx.showModal({
                 title: '出错啦',
-                content: '您的账号还没有绑定微信哦',
+                content: '您的微信还没有绑定社区账号哦',
                 showCancel: false
               })
             }
             if (result.status == 500) {
-              common.systemBusy()
+              common.errorStatus(result)
             }
           }
         })
@@ -52,15 +50,15 @@ export function wxLogin() {
   })
 }
 // 社区账号登录
-export function cmLogin(account, password) {
+export function cmLogin(username, password) {
   return request({
-    url: '/cmLogin',
+    url: '/login/household',
     method: 'POST',
     header: {
       'content-type': 'application/x-www-form-urlencoded'
     },
     data: {
-      account,
+      username,
       password
     }
   })

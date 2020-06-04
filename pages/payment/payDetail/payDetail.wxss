@@ -8,7 +8,7 @@ page {
 .pay-title {
   font-size: 44rpx;
   font-weight: 700;
-  line-height: 1.36;
+  line-height: 1.96;
 }
 .pay-price {
   font-weight: 700;

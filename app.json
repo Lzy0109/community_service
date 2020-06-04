@@ -16,7 +16,6 @@
     "pages/activity/showActivityItem/showActivityItem",
     "pages/info/updateInfo/updateInfo",
     "pages/payment/showMyPayment/showMyPayment",
-    "pages/payment/toPay/toPay",
     "pages/invite/invite",
     "pages/payment/unPaid/unPaid",
     "pages/payment/isPaid/isPaid",
@@ -25,7 +24,9 @@
     "pages/bindwx/bindwx",
     "pages/modifyPwd/testOld/testOld",
     "pages/modifyPwd/update/update",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/payment/toPay/toPay",
+    "pages/payment/payStatus/payStatus"
   ],
   "window": {
     "backgroundTextStyle": "light",

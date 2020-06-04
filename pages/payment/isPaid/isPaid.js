@@ -18,7 +18,7 @@ Page({
           paid: result.data
         })
       } else {
-        common.systemBusy()
+        common.errorStatus(result)
       } 
     })
   }

@@ -29,6 +29,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    hh_id: ''
+    hh_id: '',
+    token: ''
   }
 })

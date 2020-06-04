@@ -18,12 +18,8 @@ Page({
         this.setData({
           payment: result.data
         })
-      }
-      if (result.status == 401) {
-        common.systemError()
-      }
-      if (result.status == 500) {
-        common.systemBusy()
+      } else {
+        common.errorStatus(result)
       }
     })
   }

@@ -1,6 +1,5 @@
-import {
-  baseURL
-} from './config.js'
+import { baseURL } from './config.js'
+var app = getApp()
 // 封装request
 export default function(options) {
   return new Promise((resolve, reject) => {
@@ -8,7 +7,11 @@ export default function(options) {
       url: baseURL + options.url,
       method: options.method || 'GET',
       data: options.data || {},
-      header: options.header || {'content-type': 'application/json'},
+      header: {
+        'content-type': options.header != null ? options.header['content-type'] : 'application/json',
+        // Shiro令牌
+        'Authorization': app.globalData.token
+      },
       success: resolve,
       fail: reject
     })
