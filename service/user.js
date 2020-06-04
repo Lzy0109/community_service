@@ -17,7 +17,7 @@ export class RegisterData {
 // 验证旧密码
 export function verifyPassword(hh_id, password) {
   return request({
-    url: '/verifyPassword',
+    url: '/user/password',
     method: 'POST',
     header: {
       'content-type': 'application/x-www-form-urlencoded'
@@ -31,7 +31,7 @@ export function verifyPassword(hh_id, password) {
 // 修改密码
 export function modifyPassword(hh_id, password) {
   return request({
-    url: '/modifyPassword',
+    url: '/user/newPassword',
     method: 'POST',
     header: {
       'content-type': 'application/x-www-form-urlencoded'
