@@ -33,13 +33,12 @@ page {
   width: 170rpx;
   border-right: 2rpx solid #cecece;
 }
+.form-item-input {
+  flex: 1;
+}
 .input-tick {
   width: 40rpx;
   height: 40rpx;
-}
-.input-tick image{
-  width: 100%;
-  height: 100%;
 }
 .form-item-content {
   margin-bottom: 40rpx;

@@ -4,7 +4,7 @@ var app = getApp()
 var common = require('../../../service/common.js')
 var SHA_256 = require('../../../utils/SHA256.js')
 import {
-  updatePwd
+  updatePwd, modifyPassword
 } from '../../../service/user.js'
 Page({
   data: {
@@ -12,11 +12,11 @@ Page({
     isError: false,
     isDisplay1: 'none',
     isDisplay2: 'none',
-    newPwd: ''
+    newPassword: ''
   },
   testPwd(e) {
-    const pwd = e.detail.value
-    const status = util.checkPwd(pwd)
+    const password = e.detail.value
+    const status = util.checkPwd(password)
     if (status == 0) {
       this.setData({
         warnMsg: '请输入新密码',
@@ -35,13 +35,14 @@ Page({
       this.setData({
         isDisplay1: '',
         isError: false,
-        newPwd: pwd
+        // 密码加密
+        newPassword: SHA_256.sha256_digest(password)
       })
     }
   },
   testAgain(e) {
-    const inputPwd = e.detail.value
-    if(inputPwd != this.data.newPwd) {
+    const inputPassword = SHA_256.sha256_digest(e.detail.value)
+    if(inputPassword != this.data.newPassword) {
       this.setData({
         warnMsg: "输入的密码与新密码不一致",
         isDisplay2: 'none',
@@ -54,7 +55,7 @@ Page({
       })
     }
   },
-  submitNewPwd() {
+  submitPassword() {
     const FLAG = (this.data.isDisplay1 == "") &&
                  (this.data.isDisplay2 == "") &&
                  (this.data.isError == false)
@@ -64,12 +65,8 @@ Page({
         isError: true
       })
     } else {
-      console.log("完成验证，可以提交")
       // 发送网络请求
-      const hh_id = app.globalData.hh_id
-      // 密码加密
-      const password = SHA_256.sha256_digest(this.data.newPwd)
-      updatePwd(hh_id, password).then(res => {
+      modifyPassword(app.globalData.hh_id, this.data.newPassword).then(res => {
         const result = res.data
         if (result.status == 200) {
           wx.showToast({

@@ -27,9 +27,9 @@ Page({
     genderIndex: 0,
     gender: ['男', '女'],
     date: '2017-09-01',  //创建时间
-    buildingId: 1,
+    buildingId: 0,
     buildingName: '',
-    roomId: 1,
+    roomId: 0,
     roomNum: '',
     password: '',
     next_btn: '下一步',
@@ -268,20 +268,12 @@ Page({
     }
   },
   onLoad: function (options) {
-    // 获取roomId
-    getRoomById(options.roomId).then(res => {
-      const result = res.data
-      console.log(result)
-      if (result.status == 200) {
-        this.setData({
-          buildingId: result.data.buildingId,
-          buildingName: result.data.buildingName,
-          roomNum: result.data.roomNum,
-          roomId: result.data.id
-        })
-      } else {
-        common.errorStatus(result)
-      }
+    // 获取query参数
+    this.setData({
+      buildingId: options.buildingId,
+      buildingName: options.buildingName,
+      roomNum: options.roomNum,
+      roomId: options.roomId
     })
   }
 })

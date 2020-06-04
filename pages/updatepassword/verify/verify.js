@@ -4,18 +4,18 @@ var util = require('../../../utils/util.js')
 var common = require('../../../service/common.js')
 var SHA_256 = require('../../../utils/SHA256.js')
 import {
-  testOldPwd
+  verifyPassword
 } from '../../../service/user.js'
 Page({
   data: {
     warnMsg: '',
     isError: false,
     isDisplay: 'none',
-    oldPwd: ''
+    oldPassword: ''
   },
   testPwd(e) {
-    const pwd = e.detail.value
-    const status = util.checkPwd(pwd)
+    const password = e.detail.value
+    const status = util.checkPwd(password)
     if (status == 0) {
       this.setData({
         warnMsg: '请输入旧密码',
@@ -34,7 +34,8 @@ Page({
       this.setData({
         isDisplay: '',
         isError: false,
-        oldPwd: pwd
+        // 密码加密
+        oldPassword: SHA_256.sha256_digest(password)
       })
     }
   },
@@ -47,15 +48,12 @@ Page({
       })
     } else {
       // 发送网络请求
-      const hh_id = app.globalData.hh_id
-      // 密码加密
-      const password = SHA_256.sha256_digest(this.data.oldPwd)
-      testOldPwd(hh_id, password).then(res => {
+      verifyPassword(app.globalData.hh_id, this.data.oldPassword).then(res => {
         const result = res.data
         console.log(result)
         if (result.status == 200) {
           wx.navigateTo({
-            url: '/pages/modifyPwd/update/update',
+            url: '/pages/updatepassword/modify/modify',
           })
         } else {
           common.errorStatus(result)

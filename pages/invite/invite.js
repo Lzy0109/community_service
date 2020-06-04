@@ -35,7 +35,9 @@ Page({
         method: 'POST',
         responseType: 'arraybuffer',
         data: {
-          'scene': 'roomId=' + this.data.roomId,
+          'scene': 'roomId=' + this.data.roomId + 
+                   'buildingName=' + this.data.buildingName + 
+                   'roomNum=' + this.data.roomNum,
           'path': 'pages/register/register',
           'width': 430
         },

@@ -2,12 +2,22 @@
 .bind-btn {
   margin-bottom: 440rpx;
 }
-.tips {
-  padding: 80rpx 32rpx;
+.bind-icon {
   text-align: center;
-  color: grey;
+}
+.tips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80rpx 32rpx;
   font-weight: 700;
   font-size: 44rpx;
+}
+.bind {
+  color: #09BB07;
+}
+.unbind {
+  color: #e64340;
 }
 .avatar {
   width: 128rpx;

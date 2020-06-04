@@ -22,8 +22,8 @@
     "pages/activity/showOngoing/showOngoing",
     "pages/activity/showClosed/showClosed",
     "pages/bindwx/bindwx",
-    "pages/modifyPwd/testOld/testOld",
-    "pages/modifyPwd/update/update",
+    "pages/updatepassword/verify/verify",
+    "pages/updatepassword/modify/modify",
     "pages/register/register",
     "pages/payment/toPay/toPay",
     "pages/payment/payStatus/payStatus"

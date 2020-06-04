@@ -1,12 +1,21 @@
 <bindwx-pannel name="微信授权" desc="Wechat Authorization">
-  <view class="tips">
-    {{tips}}
-  </view>
+  <block wx:if="{{bind_flag}}">
+    <view class="tips bind">
+      <icon type="success" style="padding-right: 20rpx;"/> {{tips}} 
+    </view>
+  </block>
+  <block wx:else>
+    <view class="tips unbind"> 
+      <icon type="warn" style="padding-right: 20rpx;"/>{{tips}} 
+    </view>
+  </block>
   <view class="bind-btn">
-    <button type="primary"
-            open-type="getUserInfo"
-            bindgetuserinfo="bindWx">
-            {{btn_name}}
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindWx">
+      {{btn_name}}
+    </button>
+    <button style="color: white; background-color:#e64340; margin-top:40rpx;"
+            bind:tap="cancelClick" disabled="{{!bind_flag}}">
+        取消绑定
     </button>
   </view>
   <bindwx-pannel-footer text="智能社区服务平台"/>

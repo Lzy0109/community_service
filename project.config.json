@@ -63,7 +63,7 @@
 					"id": 0,
 					"name": "扫码注册",
 					"pathName": "pages/register/register",
-					"query": "roomId=1",
+					"query": "buildingId=1&roomId=1&buildingName=1栋&roomNum=101",
 					"scene": 1047
 				}
 			]

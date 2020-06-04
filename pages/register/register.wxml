@@ -23,7 +23,7 @@
           <input placeholder="请输入姓名" bind:blur="testName" name="name"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay1}}">
-          <image src="/assets/p-i-icon/tick.svg"></image>
+          <icon type="success"/>
         </view>
       </form-item>
       <form-item name="身份证">
@@ -32,7 +32,7 @@
                  bind:blur="testIDcard"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay2}}">
-          <image src="/assets/p-i-icon/tick.svg"></image>
+          <icon type="success"/>
         </view>
       </form-item>
       <form-item name="性别">
@@ -49,7 +49,7 @@
                  name="age"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay3}}">
-          <image src="/assets/p-i-icon/tick.svg"></image>
+          <icon type="success"/>
         </view>
       </form-item>
       <form-item name="联系电话">
@@ -58,7 +58,7 @@
                  name="telephone"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay4}}">
-          <image src="/assets/p-i-icon/tick.svg"></image>
+          <icon type="success"/>
         </view>
       </form-item>
       <form-item name="入住日期">
@@ -77,7 +77,7 @@
           <input placeholder="密码" bind:blur="testPwd" type="password"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay5}}">
-          <image src="/assets/p-i-icon/tick.svg"></image>
+          <icon type="success"/>
         </view>
       </form-item>
       <form-item name="确认密码">
@@ -86,7 +86,7 @@
                  name="password" type="password"></input>
         </view>
         <view class="input-tick" style="display:{{isDisplay6}}">
-          <image src="/assets/p-i-icon/tick.svg"></image>
+          <icon type="success"/>
         </view>
       </form-item>
     </view>

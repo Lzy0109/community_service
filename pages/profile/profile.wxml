@@ -34,7 +34,7 @@
                         iconPath="/assets/profile/invite.svg"/>
     </navigator>
   </block>
-  <navigator url="/pages/modifyPwd/testOld/testOld">
+  <navigator url="/pages/updatepassword/verify/verify">
     <profile-list-item name="修改密码" 
                        iconPath="/assets/profile/pwd.svg"/>
   </navigator>

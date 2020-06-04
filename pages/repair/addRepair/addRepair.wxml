@@ -13,7 +13,7 @@
         <input placeholder="姓名" bind:blur="testName" name="name"></input>
       </view>
       <view class="input-tick" style="display:{{isDisplay1}}">
-        <image src="/assets/p-i-icon/tick.svg"></image>
+        <icon type="success"/>
       </view>
     </view>
     <view class="form-item">
@@ -24,7 +24,7 @@
         <input placeholder="联系电话" bind:blur="testTel" name="telephone"></input>
       </view>
       <view class="input-tick" style="display:{{isDisplay2}}">
-        <image src="/assets/p-i-icon/tick.svg"></image>
+        <icon type="success"/>
       </view>
     </view>
     <view class="form-item-content">
