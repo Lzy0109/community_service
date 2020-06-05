@@ -1,5 +1,5 @@
 import request from './network.js'
-import config from './config.js'
+import { baseURL } from './config.js'
 var app = getApp()
 var common = require('./common.js')
 // 微信登录
@@ -9,7 +9,7 @@ export function wxLogin() {
       // 发送 res.code 到后台换取 openId
       if (res.code) {
         wx.request({
-          url: config.baseURL + "/wxLogin",
+          url: baseURL + "/wxLogin",
           method: 'POST',
           data: {
             code: res.code
