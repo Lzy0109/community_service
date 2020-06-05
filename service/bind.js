@@ -1,4 +1,5 @@
 import request from '../service/network.js'
+import config from '../service/config.js'
 var app = getApp()
 // 绑定微信
 export function bindWx(hh_id) {
@@ -7,7 +8,7 @@ export function bindWx(hh_id) {
       // 发送 res.code 到后台换取 openId, sessionKey
       if (res.code) {
         wx.request({
-          url: 'http://localhost:8080/bindWx',
+          url: config.baseURL + '/bindWx',
           method: 'POST',
           header: {
             'content-type': 'application/x-www-form-urlencoded',
