@@ -37,7 +37,7 @@ Page({
                     wx.redirectTo({
                       url: './bindwx',
                     })
-                  }, 2000)
+                  }, 1000)
                 }
               })
             } else {

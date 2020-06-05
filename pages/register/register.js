@@ -3,9 +3,6 @@ var util = require('../../utils/util.js')
 var common = require('../../service/common.js')
 var SHA_256 = require('../../utils/SHA256.js')
 import {
-  getRoomById
-} from '../../service/room.js'
-import {
   RegisterData, 
   resgister
 } from '../../service/user.js'
@@ -172,7 +169,7 @@ Page({
         // 动画效果
         if (this.data.hidden1 == false) {
           var animation1 = wx.createAnimation({
-          duration: 800,
+          duration: 400,
           timingFunction: 'ease',
         })
         animation1.opacity(0).step()
@@ -180,7 +177,7 @@ Page({
           animationData1: animation1.export(),
         })
         var animation2 = wx.createAnimation({
-          duration: 800,
+          duration: 400,
           timingFunction: 'ease',
         })
         animation2.opacity(1).step()
@@ -193,11 +190,11 @@ Page({
             hidden2: false,
             next_btn: '返回上一级'
           })
-        }.bind(this), 800)
+        }.bind(this), 400)
       } 
       else {
         var animation1 = wx.createAnimation({
-          duration: 800,
+          duration: 400,
           timingFunction: 'ease',
         })
         animation1.opacity(0).step()
@@ -205,7 +202,7 @@ Page({
           animationData2: animation1.export(),
         })
         var animation2 = wx.createAnimation({
-          duration: 800,
+          duration: 400,
           timingFunction: 'ease',
         })
         animation2.opacity(1).step()
@@ -218,7 +215,7 @@ Page({
             hidden2: true,
             next_btn: '下一步'
           })
-        }.bind(this), 800)
+        }.bind(this), 400)
       }
     }
   },
@@ -258,7 +255,7 @@ Page({
                 wx.redirectTo({
                   url: '../login/login'
                 })
-              }, 2000)
+              }, 1000)
             }
           })
         } else {

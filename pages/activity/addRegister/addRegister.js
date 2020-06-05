@@ -62,7 +62,7 @@ Page({
                 wx.navigateBack({
                   delta: 2
                 })
-              }, 2000)
+              }, 1000)
             }
           })
         } else {

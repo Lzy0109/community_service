@@ -51,7 +51,7 @@ Page({
                 wx.navigateBack({
                   delta: 1
                 })
-              }, 2000)
+              }, 1000)
             }
           })
         } else {

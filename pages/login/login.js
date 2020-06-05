@@ -22,7 +22,7 @@ Page({
   // 社区账号登录 添加动画 多创建一个动画对象来实现来回切换(官方bug)
   cm_login() {
     var animation1 = wx.createAnimation({
-      duration: 800,
+      duration: 400,
       timingFunction: 'ease',
     })
     animation1.opacity(0).step()
@@ -30,7 +30,7 @@ Page({
       animationData1: animation1.export(),
     })
     var animation2 = wx.createAnimation({
-      duration: 800,
+      duration: 400,
       timingFunction: 'ease',
     })
     animation2.opacity(1).step()
@@ -42,12 +42,12 @@ Page({
         hidden1: true,
         hidden2: false
       })
-    }.bind(this), 800)
+    }.bind(this), 400)
   },
   // 返回上一级 添加动画
   return_back() {
     var animation1 = wx.createAnimation({
-      duration: 800,
+      duration: 400,
       timingFunction: 'ease',
     })
     animation1.opacity(0).step()
@@ -55,7 +55,7 @@ Page({
       animationData2: animation1.export(),
     })
     var animation2 = wx.createAnimation({
-      duration: 800,
+      duration: 400,
       timingFunction: 'ease',
     })
     animation2.opacity(1).step()
@@ -67,7 +67,7 @@ Page({
         hidden1: false,
         hidden2: true
       })
-    }.bind(this), 800)
+    }.bind(this), 400)
   },
   // 忘记密码
   forget() {
