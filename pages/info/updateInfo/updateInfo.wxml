@@ -7,7 +7,7 @@
     </info-item>
     <info-item iconPath="/assets/p-i-icon/IDcard.svg">
       <text class="item-text default">身份证号码</text>
-      <text class="default">{{household.idcard}}</text>
+      <text class="default">{{household.IDcard}}</text>
     </info-item>
     <info-item iconPath="/assets/p-i-icon/date.svg">
       <text class="item-text default">入住日期</text>

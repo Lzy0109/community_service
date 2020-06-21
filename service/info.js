@@ -20,7 +20,7 @@ export function updateHousehold(household) {
       gender: household.gender,
       age: household.age,
       telephone: household.telephone,
-      IDcard: household.idcard,
+      IDcard: household.IDcard,
       arrivalDate: household.arrivalDate,
       isOwner: household.isOwner,
       buildingId: household.buildingId,

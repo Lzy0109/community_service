@@ -3,7 +3,7 @@
     <text class="item-text">姓名</text>{{household.name}}
   </info-item>
   <info-item iconPath="/assets/p-i-icon/IDcard.svg">
-    <text class="item-text">身份证号码</text>{{household.idcard}}
+    <text class="item-text">身份证号码</text>{{household.IDcard}}
   </info-item>
   <info-item iconPath="/assets/p-i-icon/gender.svg">
     <text class="item-text">性别</text>{{household.gender}}

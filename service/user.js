@@ -45,7 +45,7 @@ export function modifyPassword(hh_id, password) {
 // 注册
 export function resgister(registerData) {
   return request({
-    url: '/household',
+    url: '/household/register',
     method: 'POST',
     header: {
       'content-type': 'application/x-www-form-urlencoded'

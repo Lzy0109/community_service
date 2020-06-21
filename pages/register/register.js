@@ -238,6 +238,7 @@ Page({
       register.buildingId = this.data.buildingId
       register.roomId = this.data.roomId
       register.account = register.telephone
+      console.log(register)
       // 密码加密
       register.password = SHA_256.sha256_digest(register.password)
       this.setData({
@@ -246,6 +247,7 @@ Page({
       // 提交表单并跳转登录页
       resgister(register).then(res => {
         const result = res.data
+        console.log(result)
         if (result.status == 200) {
           wx.showToast({
             title: '注册成功',
